@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" 
+    android:background="@color/white" >
+	<RelativeLayout
+        android:id="@+id/login_top"
+           android:layout_width="fill_parent"
+           android:layout_height="160dp"
+           android:orientation="vertical" >
+		<RelativeLayout
+		    android:id="@+id/unrent"
+		    android:layout_width="fill_parent"
+		    android:layout_height="fill_parent" >
+
+			<RelativeLayout
+			    android:id="@+id/scooter"
+			    android:layout_width="120dp"
+			    android:layout_height="120dp"
+			    android:layout_centerHorizontal="true"
+			    android:background="@drawable/track_car" >
+
+			</RelativeLayout>
+
+			<TextView
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_below="@id/scooter"
+			    android:layout_centerHorizontal="true"
+			    android:text="Rent a scooter to access controls"
+			    android:textColor="@color/blue"
+			    android:textSize="16dp" />
+			
+		</RelativeLayout>
+
+		<RelativeLayout
+		    android:id="@+id/rent"
+		    android:layout_width="fill_parent"
+		    android:layout_height="fill_parent" >
+
+			<TextView
+			    android:id="@+id/text1"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_centerHorizontal="true"
+			    android:text="You&apos;ve rented scooter"
+			    android:textColor="@color/blue"
+			    android:textSize="16dp" />
+
+			<RelativeLayout
+			    android:id="@+id/number"
+			    android:layout_width="95dp"
+			    android:layout_height="95dp"
+			    android:layout_below="@id/text1"
+			    android:layout_centerHorizontal="true"
+			    android:background="@drawable/scooter_number_background_m" >
+
+				<TextView
+				    android:id="@+id/carname"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:layout_centerHorizontal="true"
+				    android:layout_centerVertical="true"
+				    android:text="00"
+				    android:textColor="@color/blue"
+				    android:textSize="50dp" />
+
+			</RelativeLayout>
+
+			<TextView
+			    android:id="@+id/text2"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_below="@id/number"
+			    android:layout_centerHorizontal="true"
+			    android:text="Rental Timer"
+			    android:textColor="@color/blue"
+			    android:textSize="16dp"
+			    android:textStyle="bold" />
+
+			<TextView
+			    android:id="@+id/rlent_time"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_alignParentBottom="true"
+			    android:layout_below="@id/text2"
+			    android:layout_centerHorizontal="true"
+			    android:textSize="15dp"     
+			    android:visibility="visible" /> <!-- modify by ycf on 20150628 --> 
+			<!-- 2. 顯示用戶租車時間 (已有API支援，用戶開始租車時間會顯示在租車狀態） -->
+		</RelativeLayout>
+	</RelativeLayout>
+
+	<LinearLayout
+	    android:id="@+id/control_panel"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:layout_below="@id/login_top"
+		android:layout_marginTop="10dp"
+	    android:layout_marginBottom="50dp"
+	    android:orientation="vertical" >
+
+		<LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0" >
+
+			<LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="2.2"
+                android:orientation="vertical" >
+			</LinearLayout>
+
+			<LinearLayout
+			    android:layout_width="fill_parent"
+			    android:layout_height="fill_parent"
+			    android:layout_marginBottom="30dp"
+			    android:layout_marginTop="30dp"
+			    android:layout_weight="1.0"
+			    android:orientation="vertical" >
+
+				<Button
+				    android:id="@+id/east_car"
+				    android:layout_width="fill_parent"
+				    android:layout_height="wrap_content"
+				    android:layout_weight="1.0"
+				    android:background="@drawable/shape_btn_blue_more"
+				    android:text="Open Seat"
+				    android:textColor="@drawable/shape_btn_blue_text"
+				    android:textSize="25dp"
+				    android:textStyle="bold" />
+
+				<Button
+				    android:id="@+id/lock_car"
+				    android:layout_width="fill_parent"
+				    android:layout_height="wrap_content"
+				    android:layout_margin="10dp"
+				    android:layout_weight="1.0"
+				    android:background="@xml/main_lock_btn_selector"
+				    android:visibility="gone" />
+
+				<Button
+				    android:id="@+id/unlock_car"
+				    android:layout_width="fill_parent"
+				    android:layout_height="wrap_content"
+				    android:layout_marginTop="20dp"
+				    android:layout_weight="1.0"
+				    android:background="@drawable/shape_btn_blue_more"
+				    android:text="Unlock"
+				    android:textColor="@drawable/shape_btn_blue_text"
+				    android:textSize="25dp"
+				    android:textStyle="bold" />
+	
+				<Button
+				    android:id="@+id/btn_return"
+				    android:layout_width="fill_parent"
+				    android:layout_height="wrap_content"
+				    android:layout_marginTop="20dp"
+				    android:layout_weight="1"
+				    android:background="@drawable/shape_btn_blue_more"
+				    android:text="Return"
+				    android:textColor="@drawable/shape_btn_blue_text"
+				    android:textSize="25dp"
+				    android:textStyle="bold" />
+
+			</LinearLayout>
+
+
+			<LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="2.2"
+                android:orientation="vertical" >
+
+
+			</LinearLayout>
+		</LinearLayout>
+
+	</LinearLayout>
+	
+	<!-- added by ycf on 20150725 begin -->
+	<RelativeLayout
+	    android:id="@+id/return_layout"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:clickable="true"
+	    android:visibility="gone" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.3"
+            android:background="@color/black"
+            android:focusable="true"
+            android:visibility="visible" />
+        
+		<RelativeLayout
+		    android:id="@+id/title_return_layout"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_centerHorizontal="true"
+		    android:layout_centerVertical="true"
+		    android:layout_marginLeft="30dp"
+		    android:layout_marginRight="30dp"
+		    android:background="@xml/relative_radio" >
+
+			<RelativeLayout
+			    android:id="@+id/linearLayout2"
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:layout_margin="3dp" >
+
+				<TextView
+				    android:id="@+id/textView8"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:layout_margin="20dp"
+				    android:text="Make sure you turn off the scooter and return your helmet before ending your ride"
+				    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+			</RelativeLayout>
+
+			<LinearLayout
+			    android:id="@+id/LinearLayoutx1"
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:layout_below="@+id/linearLayout2"
+			    android:orientation="vertical" >
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@color/devide_line" />
+
+				<Button
+				    android:id="@+id/btn_return_now"
+				    android:layout_width="fill_parent"
+				    android:layout_height="50dp"
+				    android:layout_margin="0dp"
+				    android:layout_weight="1"
+				    android:background="@drawable/btn_white_button"
+				    android:text="I did, return now."
+				    android:textColor="@color/blue"
+				    android:textSize="18sp" />
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@color/devide_line" />
+				<Button
+				    android:id="@+id/btn_open_seat"
+				    android:layout_width="fill_parent"
+				    android:layout_height="50dp"
+				    android:layout_margin="0dp"
+				    android:layout_weight="1"
+				    android:background="@drawable/btn_white_button"
+				    android:text="Open seat"
+				    android:textColor="@color/blue"
+				    android:textSize="18sp" />
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@color/devide_line" />
+				<Button
+				    android:id="@+id/btn_cancel"
+				    android:layout_width="fill_parent"
+				    android:layout_height="50dp"
+				    android:layout_margin="0dp"
+				    android:layout_weight="1"
+				    android:background="@drawable/btn_road_button"
+				    android:text="Cancle"
+				    android:textColor="@color/blue"
+				    android:textSize="18sp" />
+
+			</LinearLayout>
+
+		</RelativeLayout>
+
+	</RelativeLayout>
+	
+	<!-- 还车失败寻找 support -->
+	<RelativeLayout
+	    android:id="@+id/return_layout2"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:clickable="true"
+	    android:visibility="gone" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.3"
+            android:background="@color/black"
+            android:focusable="true"
+            android:visibility="visible" />
+        
+		<RelativeLayout
+		    android:id="@+id/title_return_layout2"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_centerHorizontal="true"
+		    android:layout_centerVertical="true"
+		    android:layout_marginLeft="30dp"
+		    android:layout_marginRight="30dp"
+		    android:background="@xml/relative_radio" >
+
+			<RelativeLayout
+			    android:id="@+id/linearLayout5"
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:layout_margin="3dp" >
+				
+			    <TextView
+				    android:id="@+id/textView6"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:layout_margin="20dp"
+				    android:text="Scooter Return Failed"
+				    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+				<TextView
+				    android:id="@+id/textView9"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:layout_margin="20dp"
+				    android:text="Please contact support"
+				    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+			</RelativeLayout>
+
+			<LinearLayout
+			    android:id="@+id/LinearLayoutx3"
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:layout_below="@+id/linearLayout3"
+			    android:orientation="vertical" >
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@color/devide_line" />
+				<Button
+				    android:id="@+id/btn_cancel2"
+				    android:layout_width="fill_parent"
+				    android:layout_height="50dp"
+				    android:layout_margin="0dp"
+				    android:layout_weight="1"
+				    android:background="@drawable/btn_white_button"
+				    android:text="Cancel"
+				    android:textColor="@color/blue"
+				    android:textSize="18sp" />
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@color/devide_line" />
+				<Button
+				    android:id="@+id/btn_call_support"
+				    android:layout_width="fill_parent"
+				    android:layout_height="50dp"
+				    android:layout_margin="0dp"
+				    android:layout_weight="1"
+				    android:background="@drawable/btn_road_button"
+				    android:text="Call Support"
+				    android:textColor="@color/blue"
+				    android:textSize="18sp" />
+
+			</LinearLayout>
+
+		</RelativeLayout>
+
+	</RelativeLayout>
+	
+		<!-- 还车失败提示 -->
+	<RelativeLayout
+        android:id="@+id/ud_rtn_fail_rlayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@xml/relative_radio"
+        android:visibility="gone" >
+
+        <LinearLayout
+            android:id="@+id/ud_rtn_fail_llayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tv_rtn_fail_title"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_margin="20dp"
+                android:gravity="center"
+                android:text="Your scooter is not in a valid parking spot"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:id="@+id/tv_rtn_fail_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="0.1dp"
+                android:gravity="center"
+                android:text="Refer to the Map view to find the closest scooter Parking Station and park your scooter within the indicated boundary."
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="30px" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="0dp"
+                android:background="@color/devide_line" />
+
+            <Button
+                android:id="@+id/btn_rtn_fail_ok"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_margin="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_road_button"
+                android:text="OK"
+                android:textColor="@color/blue"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </RelativeLayout>
+    <!-- added by ycf on 20150725 end -->
+    
+    <!-- added by ycf on 20150806 begin -->
+     <RelativeLayout android:id="@+id/alpha_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.5"
+            android:background="@color/black"
+            android:focusable="true"
+            android:visibility="gone" />
+     
+    	<RelativeLayout
+		    android:id="@+id/payment_fail_layout"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_centerHorizontal="true"
+		    android:layout_centerVertical="true"
+		    android:layout_marginLeft="30dp"
+		    android:layout_marginRight="30dp"
+		    android:background="@xml/relative_radio"
+		    android:visibility="gone" >
+			
+		    <LinearLayout
+		        android:id="@+id/payment_fail_llayout"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="vertical" >
+            
+		       <TextView
+		            android:id="@+id/tx_payment_fail_title"
+		            android:layout_width="wrap_content"
+		            android:layout_height="60dp"
+		            android:layout_marginLeft="20dp"
+		            android:layout_marginRight="20dp"
+		            android:gravity="center"
+		            android:textAppearance="?android:attr/textAppearanceMedium"
+		            android:textSize="30px" />
+
+		        <TextView
+		            android:id="@+id/tx_payment_fail_msg"
+		            android:layout_width="wrap_content"
+		            android:layout_height="60dp"
+		            android:layout_marginLeft="20dp"
+		            android:layout_marginRight="20dp"
+		            android:layout_marginTop="0.1dp"
+		            android:gravity="center"
+		            android:textAppearance="?android:attr/textAppearanceMedium"
+		            android:textSize="30px" />
+
+		        <View
+		            android:layout_width="match_parent"
+		            android:layout_height="0.5dp"
+		            android:layout_marginTop="0dp"
+		            android:background="@color/devide_line" />
+
+		        <Button
+		            android:id="@+id/btn_payment_fail_ok"
+		            android:layout_width="fill_parent"
+		            android:layout_height="50dp"
+		            android:layout_margin="0dp"
+		            android:layout_weight="1"
+		            android:background="@drawable/btn_road_button"
+		            android:text="OK"
+		            android:textColor="@color/blue"
+		            android:textSize="18sp" />
+		    </LinearLayout>
+		</RelativeLayout>
+    <!-- added by ycf on 20150806 end -->
+
+</RelativeLayout>

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+	<LinearLayout
+                android:id="@+id/top_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:orientation="vertical" >
+
+		<RelativeLayout
+              		android:id="@+id/more_user"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp" >
+
+			<ImageView
+                        android:id="@+id/pic"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:contentDescription="@string/app_name"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/icon" />
+
+			<ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/name"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_toRightOf="@id/pic"
+                        android:contentDescription="@string/app_name"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/icon_star" />
+
+			<ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:contentDescription="@string/app_name"
+                        android:scaleType="fitXY"/>
+
+			<TextView
+                        android:id="@+id/name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/pic"
+                        android:text="用户某某" />
+			<TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/name"
+                        android:text="@string/more_expire_never"
+                        android:textColor="@color/gray" />
+		</RelativeLayout>
+
+		<View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/devide_line" />
+
+		<RelativeLayout
+       				 android:id="@+id/more_pattern"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp" >
+
+			<ImageView
+                        android:id="@+id/shoucang"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/more_pattern_paswd" />
+
+			<TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/shoucang"
+                        android:text="@string/more_pattern_paswd" />
+
+		</RelativeLayout>
+
+		<View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/devide_line" />
+
+		<RelativeLayout
+       				android:id="@+id/more_chg_user"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp" >
+
+			<ImageView
+                        android:id="@+id/shoucang"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/more_user_change" />
+
+			<TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/shoucang"
+                        android:text="@string/more_change_user" />
+
+		</RelativeLayout>
+
+	</LinearLayout>
+
+
+	<com.hylh.scooterstg.view.CustomerScrollView
+        android:layout_below="@+id/top_layout" 
+		    android:layout_width="fill_parent"
+		    android:layout_height="fill_parent" >
+
+		<RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+			<LinearLayout
+                android:id="@+id/two"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="vertical" >
+
+				<RelativeLayout
+       				android:id="@+id/more_report"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp" >
+
+					<ImageView
+                        android:id="@+id/qianbao"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/more_leba_list_reports" />
+
+					<TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/qianbao"
+                        android:text="@string/more_report" />
+
+				</RelativeLayout>
+
+			</LinearLayout>
+
+			<RelativeLayout
+                android:id="@+id/more_update"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" 
+                android:layout_margin="10dp"
+                android:layout_below="@id/two">
+				
+				<ImageView
+                    android:id="@+id/biaoqing"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/more_leba_list_seek_individuation" />
+
+				<TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/biaoqing"
+                    android:text="@string/more_update" />
+
+			</RelativeLayout>
+
+		</RelativeLayout>
+	</com.hylh.scooterstg.view.CustomerScrollView>
+
+	<RelativeLayout
+                android:id="@+id/more_settings"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="10dp" >
+
+		<ImageView
+                    android:id="@+id/setting"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/more_setting_setting" />
+
+		<TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/setting"
+                    android:text="@string/more_setting" />
+
+	</RelativeLayout>
+</RelativeLayout>

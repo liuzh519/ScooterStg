@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_about_info">ScooterStg</string>
+	<string name="app_settings">system setting</string>
+	<string name="app_null" />
+	<string name="app_name">ScooterStg</string>
+	<string name="app_cancle">Cancel</string>
+	<string name="app_change_user">User log-off</string>
+	<string name="app_exit_user">Log out</string>
+	<string name="app_about">About</string>
+	<string name="lang"/>
+	<string name="back">back</string>
+	<string name="done">Done</string>
+	<string name="btn_next">next</string>
+	<string name="btn_confirm">Confirm</string>
+	<string name="btn_cancel">Cancel</string>
+	<string name="btn_vibrate">shock</string>
+	<string name="btn_sound">voice</string>
+	<string name="btn_warn_confirm">alarm Confirm</string>
+	<string name="tv_loading">Loading , please wait</string>
+	<string name="execute_plsease_wait">Running , please wait</string>
+	<string name="no_data">network anomaly</string>
+	<string name="confirm">Confirm</string>
+	<string name="error">error</string>
+	<string name="wait_gps">Wait for positioning</string>
+	<string name="track_map">Map</string>
+	<string name="track_list">List</string>
+	<!--  notify
+  -->
+	<string name="notify_title">running</string>
+	<!--  首页 	home page</string>
+  -->
+	<string name="tab_park">Park</string>
+	<string name="tab_scooter">Scooter</string>
+	<string name="lay_settings">Settings</string>
+	<string name="tab_location">Location</string>
+	<string name="tab_warn">alarm</string>
+	<string name="tab_control">Control</string>
+	<string name="tab_status">Status</string>
+	<string name="tab_track">GPS</string>
+	<string name="tab_more">Settings</string>
+	<string name="tab_more_title">setting</string>
+	<string name="tab_track_title">Device location</string>
+	<!--  异常 	abnormal</string>
+  -->
+	<string name="result_title_suc">success</string>
+	<string name="result_title_err">fail</string>
+	<string name="result_info_free_vecl">Free Scooter</string>
+	<string name="result_btn">Confirm</string>
+	<string name="result_use_sms">send command by SMS ?</string>
+	<string name="result_cancel">Cancel</string>
+	<string name="result_err">abnormal</string>
+	<string name="result_success">Command Sent</string>
+	<string name="excepton_error">error</string>
+	<string name="excepton_unknown">Server no response</string>
+	<string name="excepton_bind_error">Bind Scotter failed!</string>
+	<string name="excepton_bind_scooter">Please Bind Scotter!</string>
+	<string name="exception_usr_name_invalid">account name invalid</string>
+	<string name="exception_usr_name_emtpy">account can&quot;t less 4 digit</string>
+	<string name="exception_usr_pwd_emtpy">password can&quot;t less 6 digit</string>
+	<string name="exception_usr_phone_emtpy">phone number can&quot;t less 8 password</string>
+	<string name="exception_response">response error</string>
+	<string name="exception_unknown">Server no response</string>
+	<string name="exception_promo">Enter Promo Code empty</string>
+	<string name="exception_memory">apply memory fail</string>
+	<string name="exception_read_timeout">Unable to send Command, Try Again</string>
+	<string name="exception_read_failed">read fail</string>
+	<string name="exception_invalid">in vain</string>
+	<string name="exception_network">network errors</string>
+	<string name="exception_msmmgr">SMS abnormal</string>
+	<string name="exception_sim_no">read phone number fail</string>
+	<string name="exception_msm_sim">phone number invalid</string>
+	<string name="exception_connection">please connect net</string>
+	<string name="exception_system">system mistake</string>
+	<string name="exception_cmd_not_support">command without configuration</string>
+	<string name="exception_invalid_response">response invalid</string>
+	<string name="exception_javascript">script abnormal</string>
+	<string name="exception_park_empty">this park has no scotter rent</string>
+	<string name="exception_park_not_found">park not found</string>
+	<string name="excepton_con_bluetooth_error">bluetooth abnormal</string>
+	<!--  账户 	account</string>
+  -->
+	<string name="user_settings">account setting</string>
+	<string name="btn_password_set">change password</string>
+	<string name="btn_user_set">change account information</string>
+	<string name="btn_user_adddev">add device</string>
+	<string name="btn_user_logout">Logout</string>
+	<string name="btn_user_change">change account</string>
+	<string name="btn_user_profile">Update Profile</string>
+	<string name="user_register_suc">build account success</string>
+	<string name="login_other">other account</string>
+	<string name="et_account_hint">Email or mobile number with country code</string>
+	<string name="et_password0_hint">old password</string>
+	<string name="et_password_hint">Password</string>
+	<string name="et_password2_hint">Confirm</string>
+	<string name="et_phone_hint">phone number</string>
+	<string name="et_email_hint">email</string>
+	<string name="register">Register</string>
+	<string name="register_login">Not a member yet,sign up!</string>
+	<string name="login">login</string>
+	<string name="forget_password">Forget Password</string>
+	<string name="tv_xieyi">I have read and agree</string>
+	<string name="tv_xieyi_url">terms for usage</string>
+	<string name="tv_tiaokuan">serve statement</string>
+	<string name="tv_register_success">sign up success</string>
+	<string name="register_complete">done</string>
+	<string name="register_send">sign up</string>
+	<string name="title_legal">Legal</string>
+	<string name="title_pattern_invalid">void password</string>
+	<string name="title_pattern_check">draw password</string>
+	<string name="title_pattern_set">password setting</string>
+	<string name="title_pattern_times">password again</string>
+	<string name="title_pattern_notfit">different password , please again</string>
+	<string name="title_register_user">account information</string>
+	<string name="title_register_device">device information</string>
+	<string name="title_register_success">log in , password setting</string>
+	<string name="title_rent_scooter">Parking Station</string>
+	<string name="login_pattren_failed">password error , you still have %s chance</string>
+	<string name="login_pattren_error">log in again</string>
+	<string name="usr_error_name_emtpy">void account</string>
+	<string name="usr_error_pwd_emtpy">void password</string>
+	<string name="usr_error_phone_emtpy">void phone number</string>
+	<string name="usr_error_tid_emtpy">void terminal ID</string>
+	<string name="usr_error_tcode_emtpy">void code</string>
+	<string name="usr_error_email_invalid">void email</string>
+	
+	<!-- added by ycf on 20150723 begin -->
+	<string name="title_acknowledge_page">We strongly recommend you take our free course to learn how to safely operate this scooter</string>
+	<string name="title_open_browse">Course info will open in your mobile browser</string>
+	<string name="title_network_error">Unable to connect to the Scootaway server. Please check your cell signal, or turn off wifi and try again.</string>
+	<string name="title_already_rented">This scooter is already rented</string>
+	<string name="title_choose_another">Please choose another</string>
+	<string name="title_could_not_rented">This scooter could not be rented</string>
+	<string name="title_try_again">Please try another</string>
+	<string name="title_rental_failed">Rental Failed</string>
+	<string name="toast_login_success">Success! You are logged in</string>
+	<string name="title_login_fail">Login Fail</string>
+	<string name="text_login_fail">Please check your username and password and try again.</string>
+	<string name="text_ctrl_scootaway_fail">Unable to connect to the Scootaway server. Please check your cell signal, or turn off wifi and try again.</string>
+	<string name="title_return_fail_1">Your scooter is not in a valid parking spot</string>
+	<string name="msg_return_fail_1">Refer to the Map view to find the closest scooter Parking Station and park your scooter within the indicated boundary</string>
+	<string name="title_return_fail_2">Scooter Return Failed</string>
+	<string name="msg_return_fail_2">Please contact support</string>
+	<string name="title_payment_fail">Not enough credit</string>
+	<string name="text_payment_fail">You do not have sufficient funds on your credit card to pay for this rental. As a result your credit card has been disabled. You will not be able to rent any scooters until outstanding rental charges have been paid. 
+	    If you are using a pre-paid card, fund your card to restore service. If you are not using a pre-paid card contact your credit card company to restore our ability to send you charges. If your card is expired contact Scootaway support to update your credit card information. 
+Once your rental charges have been paid your credit card will be re-enabled.</string>
+	<string name="title_payment_fail_2">Payment processing failed</string>
+	<string name="title_payment_fail_3">Your credit card is disabled</string>
+	<string name="text_payment_fail_3">Your credit card has been disabled because you have not yet paid for all of your previous scooter rentals. 
+If you are using a pre-paid card fund your card to restore service. If you are not using a pre-paid card, contact your credit card company to restore our ability to send you charges. If your card is expired contact Scootaway support to update your credit card information. 
+Once your previous rentals have been paid your credit card will be re-enabled.</string>
+	
+	<!-- added by ycf on 20150806 -->
+	
+	<!--  控制 	control</string>
+  -->
+	<string name="contoll_km">km</string>
+	<string name="contoll_km2">km</string>
+	<string name="contoll_kmh">km/h</string>
+	<string name="contoll_v">v</string>
+	<string name="contoll_0.0">0.0</string>
+	<string name="contoll_0">0</string>
+	<string name="contoll_00">00</string>
+	<string name="contoll_000000">000000</string>
+	<string name="contoll_88.8">88.8</string>
+	<string name="contoll_88">88</string>
+	<string name="contoll_888">888</string>
+	<string name="contoll_8888">8888</string>
+	<string name="contoll_8888.8">8888.8</string>
+	<string name="contoll_888888">888888</string>
+	<string name="contoll_kr_text1"/>
+	<string name="contoll_kr_text2"/>
+	<string name="contoll_kr_text3"/>
+	<string name="cmd_ctrl_bt">bluetooth</string>
+	<string name="cmd_ctrl_sms">SMS</string>
+	<string name="cmd_ctrl_tcp">internet</string>
+	<string name="openTrack">trunk</string>
+	<string name="ctrl_title">device control</string>
+	<!--  设备 	device</string>
+  -->
+	<string name="dev_ctrl_more_ctrl0">bluetooth key</string>
+	<string name="dev_ctrl_more_ctrl1">mute alarm</string>
+	<string name="dev_ctrl_more_ctrl2">trunk release</string>
+	<string name="dev_ctrl_more_ctrl3">open window</string>
+	<string name="dev_ctrl_more_ctrl4">monitor</string>
+	<string name="dev_ctrl_more_ctrl5">anti-hijacking</string>
+	<string name="dev_ctrl_more_ctrl6">locate</string>
+	<string name="dev_ctrl_more_ctrl8">video</string>
+	<string name="dev_ctrl_more_ctrl9">video stop</string>
+	<string name="dev_ctrl_more_ctrl10">photograph</string>
+	<string name="dev_ctrl_more_ctrl11">shock sensor on</string>
+	<string name="dev_ctrl_more_ctrl12">shock sensor off</string>
+	<string name="dev_ctrl_more_ctrl13">remote control on</string>
+	<string name="dev_ctrl_more_ctrl14">remote control off</string>
+	<string name="dev_ctrl_more_ctrl15">learning alarm system</string>
+	<string name="dev_ctrl_more_ctr116">lock with SMS</string>
+	<string name="dev_ctrl_more_ctrl17">unlock with SMS</string>
+	<string name="dev_ctrl_more_ctrl18">arm with SMS</string>
+	<string name="dev_ctrl_more_ctrl19">arm without SMS</string>
+	<string name="dev_ctrl_more_ctrl20">GPS with SMS on</string>
+	<string name="dev_ctrl_more_ctrl21">GPS with SMS off</string>
+	<string name="dev_ctrl_more_ctrl22"> fence on</string>
+	<string name="dev_ctrl_more_ctrl23"> fence off</string>
+	<string name="dev_ctrl_more_ctrl24">engine start in low temp on</string>
+	<string name="dev_ctrl_more_ctrl25">engine start in low temp off</string>
+	<string name="dev_ctrl_more_ctrl26">timing start on</string>
+	<string name="dev_ctrl_more_ctrl27">timing start off</string>
+	<string name="dev_ctrl_more_ctrl28">ignite time 0.6s</string>
+	<string name="dev_ctrl_more_ctrl29">ignite time 0.8s</string>
+	<string name="dev_ctrl_more_ctrl30">ignite time 1.0s</string>
+	<string name="dev_ctrl_more_ctrl39">speed up 80 km remind</string>
+	<string name="dev_ctrl_more_ctrl40">speed up 90 km remind</string>
+	<string name="dev_ctrl_more_ctrl41">speed up 100 km remind</string>
+	<string name="dev_ctrl_more_ctrl42">speed up 110 km remind</string>
+	<string name="dev_ctrl_more_ctrl43">speed up 120 km remind</string>
+	<string name="dev_ctrl_more_ctrl44">overspeed remind off</string>
+	<!--  设备 	device</string>
+  -->
+	<string name="dev_set_title">device setting</string>
+	<string name="et_dev_phone_hint">device phone numbe</string>
+	<string name="et_dev_name_hint">device name</string>
+	<string name="et_dev_code_hint">activation code</string>
+	<string name="et_devid_hint">device number</string>
+	<string name="query">inquire</string>
+	<string name="set">setting</string>
+	<string name="dev_ctrl_more">more</string>
+	<string name="dev_status">status</string>
+	<string name="dev_warn">alarm</string>
+ <!--  报表 	report</string>
+  -->
+	<string name="rpt_map_select">map select</string>
+	<string name="rpt_map_baidu">baidu map</string>
+	<string name="rpt_map_google">google map</string>
+	<string name="rpt_title">manage report</string>
+	<string name="rpt_title_scooter">Scooter report</string>
+	<string name="rpt_title_image">picture report</string>
+	<string name="rpt_title_warn">alarm report</string>
+	<string name="rpt_title_history">track</string>
+	<string name="rpt_title_dis">mileage</string>
+	<string name="rpt_title_bind">Scooter</string>
+	<string name="rpt_title_fuel">oil</string>
+	<string name="rpt_title_run">operation</string>
+	<string name="rpt_title_park">park</string>
+	<string name="rpt_title_glide">drive report</string>
+	<string name="rpt_title_login">log in report</string>
+	<string name="rpt_title_operator">operation report</string>
+	<string name="last_update_time">update recently</string>
+	<string name="pull_for_update">update</string>
+	<string name="lost_for_more">more</string>
+	<string name="loadding">loading</string>
+	<string name="show_more">more</string>
+	<string name="load_finish">loading finish</string>
+	<string name="rpt_query">Inquire</string>
+	<string name="rpt_cancel">Cancel</string>
+	<string name="rpt_result">Result</string>
+	<string name="rpt_operator">Operation</string>
+	<string name="rpt_chnl">Channel</string>
+	<string name="rpt_time">Time</string>
+	<string name="rpt_remote">Terminal</string>
+	<string name="rpt_agent">Agent</string>
+	<string name="rpt_ret_code">Code</string>
+	<string name="rpt_ret_msg">Message</string>
+	<!--  更多 	more
+  -->
+	<string name="more_expire_date">account validity</string>
+	<string name="more_expire_never">never expires</string>
+	<string name="more_pattern_paswd">password setting</string>
+	<string name="more_change_user">account change </string>
+	<string name="more_setting">setting</string>
+	<string name="more_update">APP update</string>
+	<string name="more_promo_code">Enter Promo Code</string>
+	<string name="more_report">report manage</string>
+	<string name="more_legal">Legal</string>
+	<string name="more_oradside">Roadside assistance</string>
+	<string name="more_emergency">Emergency</string>
+	<string name="more_writeus">Email Us</string>
+	<string name="more_callus">Call Scootaway</string>
+	<string name="more_orientation">Orientation</string>
+	<string name="more_vecl_setting">device setting</string>
+	<string name="more_bt_key">bluetooth key reset</string>
+	<string name="soft_update_no">newest version now</string>
+	<string name="soft_update_title">APP update</string>
+	<string name="soft_update_info">detect new version , update now ?</string>
+	<string name="soft_update_updatebtn">update</string>
+	<string name="soft_update_later">ignore</string>
+	<string name="soft_updating">being updated</string>
+	<string name="soft_update_cancel">Cancel</string>
+
+</resources>

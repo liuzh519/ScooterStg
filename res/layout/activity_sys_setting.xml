@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+	<com.hylh.scooterstg.view.TitleBarView
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fragment_title_head" />
+
+    <com.hylh.scooterstg.view.CustomerScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/title_bar" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+           <LinearLayout
+                android:id="@+id/ll_dynamic"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:background="@drawable/ll_bg_d"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+       				 android:id="@+id/btn_user_passwd"
+                    android:layout_width="match_parent"
+	                android:clickable="true"
+                    android:layout_height="50dp" >
+
+                    <ImageView
+                        android:id="@+id/shoucang"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/option_blank" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/shoucang"
+                        android:text="@string/btn_vibrate" />
+
+				    <com.hylh.scooterstg.view.SwitchButton
+       				 	android:id="@+id/sw_vibrate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+				        android:defaultValue="false"
+				        android:layout_alignParentRight="true"
+				        android:layout_centerVertical="true"
+				        android:layout_marginRight="10dp"
+				        android:key="checkbox"
+				        android:summaryOff="off"
+				        android:summaryOn="on" />
+                </RelativeLayout>
+                
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/devide_line" />
+
+                <RelativeLayout
+       				android:id="@+id/btn_usr_info"
+                    android:layout_width="match_parent"
+	                android:clickable="true"
+                    android:layout_height="50dp" >
+
+                    <ImageView
+                        android:id="@+id/shoucang"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/option_blank" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/shoucang"
+                        android:text="@string/btn_sound" />
+
+				    <com.hylh.scooterstg.view.SwitchButton
+       				 	android:id="@+id/sw_sound"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+				        android:defaultValue="false"
+				        android:layout_alignParentRight="true"
+				        android:layout_centerVertical="true"
+				        android:layout_marginRight="10dp"
+				        android:key="checkbox"
+				        android:summaryOff="off"
+				        android:summaryOn="on" />
+                </RelativeLayout>
+                
+                
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/devide_line" />
+
+                <RelativeLayout
+       				android:id="@+id/btn_usr_info"
+                    android:layout_width="match_parent"
+	                android:clickable="true"
+                    android:layout_height="50dp" >
+
+                    <ImageView
+                        android:id="@+id/shoucang"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/option_blank" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/shoucang"
+                        android:text="@string/btn_warn_confirm" />
+
+				    <com.hylh.scooterstg.view.SwitchButton
+       				 	android:id="@+id/sw_alarm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+				        android:defaultValue="false"
+				        android:layout_alignParentRight="true"
+				        android:layout_centerVertical="true"
+				        android:layout_marginRight="10dp"
+				        android:key="checkbox"
+				        android:summaryOff="off"
+				        android:summaryOn="on" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/two"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ll_dynamic"
+                android:layout_margin="10dp"
+                android:background="@drawable/ll_bg_d"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+       				 android:id="@+id/btn_app_about"
+                    android:layout_width="match_parent"
+	                android:clickable="true"
+	                android:background="@drawable/relative_layout_selector"
+                    android:layout_height="50dp" >
+
+                    <ImageView
+                        android:id="@+id/limages"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/option_blank" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/limages"
+                        android:text="@string/app_about" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/devide_line" />
+
+                <RelativeLayout
+       				 android:id="@+id/btn_app_exit"
+                    android:layout_width="match_parent"
+	                android:clickable="true"
+	                android:background="@drawable/relative_layout_selector"
+                    android:layout_height="50dp" >
+
+                    <ImageView
+                        android:id="@+id/limages"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/option_blank" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/limages"
+                        android:text="@string/app_exit_user" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+        </RelativeLayout>
+    </com.hylh.scooterstg.view.CustomerScrollView>
+
+</RelativeLayout>

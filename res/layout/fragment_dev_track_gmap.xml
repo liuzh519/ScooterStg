@@ -1,0 +1,122 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+	<com.hylh.scooterstg.view.TitleBarView
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fragment_title_head" />
+
+	<RelativeLayout
+	    android:id="@+id/map_layout"
+        android:layout_below="@+id/title_bar"
+        android:layout_height="fill_parent"
+	    android:layout_width="fill_parent">
+
+		<fragment
+            android:id="@+id/map"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            class="com.google.android.gms.maps.SupportMapFragment"
+            android:clickable="true" />
+
+		<ListView
+            android:id="@+id/listView1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@android:color/white"
+            android:visibility="gone" />
+	</RelativeLayout>
+
+	<ImageButton
+		android:id="@+id/car"
+		android:layout_width="40dp"
+		android:layout_height="40dp"
+		android:layout_alignParentLeft="true"
+		android:layout_marginLeft="10.0dip"
+		android:layout_marginTop="10.0dip"
+		android:background="@xml/track_car_s" />
+
+	<RelativeLayout
+	    android:id="@+id/confirm_layout"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent"
+	    android:visibility="gone" >
+
+		<RelativeLayout
+	        android:id="@+id/title_layout"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_centerHorizontal="true"
+	        android:layout_centerVertical="true"
+	        android:layout_margin="20dp"
+	        android:background="@xml/relative_radio" >
+			<RelativeLayout
+			    android:layout_width="fill_parent"
+			    android:id="@+id/title_bar"
+			    android:layout_height="@dimen/fragment_title_head" 
+			    android:background="@color/common_title" >
+			
+				<TextView
+                    android:id="@+id/l_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+		            android:textSize="18sp"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/blue" />
+
+			</RelativeLayout>
+
+			<RelativeLayout
+	        	android:layout_margin="10dp"
+	            android:id="@+id/linearLayout1"
+	            android:layout_below="@+id/title_bar"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content" >
+
+				<ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/login_default_avatar" />
+			</RelativeLayout>
+
+			<LinearLayout
+		        android:id="@+id/LinearLayoutx"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+				android:layout_below="@+id/linearLayout1"
+                android:orientation="horizontal" >
+
+				<Button
+                	android:layout_weight="1"
+		    	    android:id="@+id/confirm"
+		    	    android:layout_width="wrap_content"
+		    	    android:layout_height="50dp"
+		    	    android:background="@drawable/confirm_ok"
+		    	    android:text="@string/btn_confirm"
+	    	    	android:layout_margin="0dp"
+		            android:textSize="18sp"
+		    	    android:textColor="@android:color/white" />
+
+				<Button
+                	android:layout_weight="1"
+		            android:id="@+id/cancel"
+		            android:layout_width="wrap_content"
+		            android:layout_height="50dp"
+		            android:background="@drawable/confirm_cancel"
+		            android:text="@string/btn_cancel"
+	    	    	android:layout_margin="0dp"
+		            android:textSize="18sp" />
+			</LinearLayout>
+
+		</RelativeLayout>
+
+	</RelativeLayout>
+
+</RelativeLayout>

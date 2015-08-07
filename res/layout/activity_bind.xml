@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white" >
+
+    <com.hylh.scooterstg.view.TitleBarView
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fragment_title_head" />
+    
+	<RelativeLayout
+	    android:id="@+id/map_layout"
+		android:layout_below="@+id/title_bar"
+        android:layout_height="161dp"
+	    android:layout_width="fill_parent">
+			<fragment
+	            android:id="@+id/map"
+	            android:layout_width="fill_parent"
+	            android:layout_height="fill_parent"
+	            android:layout_alignParentLeft="true"
+	            class="com.google.android.gms.maps.SupportMapFragment"
+	            android:clickable="true" />
+		</RelativeLayout>
+
+		<TextView
+		    android:id="@+id/title"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_below="@+id/map_layout"
+		    android:layout_centerHorizontal="true"
+		    android:layout_marginTop="10dp"
+		    android:text="Choose a scooter"
+		    android:textAppearance="?android:attr/textAppearanceMedium"
+		    android:textColor="@color/blue"
+		    android:textSize="20dp" />
+
+		<com.hylh.scooterstg.view.PickerView
+		    android:id="@+id/picker"
+		    android:layout_width="match_parent"
+		    android:layout_height="130dp"
+		    android:layout_alignParentLeft="true"
+		    android:layout_below="@+id/title"
+		    android:layout_marginTop="3dp"
+		    android:textAppearance="?android:attr/textAppearanceLarge" />
+
+		<Button
+		    android:id="@+id/rent"
+		    android:layout_width="180dp"
+		    android:layout_height="50dp"
+		    android:layout_below="@+id/picker"
+		    android:layout_centerHorizontal="true"
+		    android:layout_marginTop="10dp"
+		    android:background="@drawable/shape_btn_blue_more"
+		    android:textColor="@drawable/shape_btn_blue_text"
+		    android:text="Rent"
+		    android:textSize="18dp"
+		    android:textStyle="bold" />
+
+</RelativeLayout>

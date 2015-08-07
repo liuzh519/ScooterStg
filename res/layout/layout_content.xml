@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+	<LinearLayout
+	    android:id="@+id/buttom_bar_group"
+	    android:layout_width="match_parent"
+	    android:layout_height="65dp"
+	    android:layout_alignParentBottom="true"
+	    android:background="@drawable/bottom_bar"
+	    android:gravity="center_vertical"
+	    android:orientation="horizontal"
+	    android:paddingBottom="2dp" >
+
+		<LinearLayout
+		    android:id="@+id/lay_park"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="1"
+		    android:gravity="center_horizontal"
+		    android:orientation="vertical" >
+               
+			<ImageView
+            android:id="@+id/img_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"             
+        android:scaleType="matrix"
+        android:clickable="true"
+        android:src="@drawable/tab_gps_nor" />
+			<TextView
+            android:id="@+id/txt_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tab_park"
+            android:textColor="#dcdcdc"
+			    android:textStyle="bold" 
+            android:textSize="15sp" />                
+		</LinearLayout>
+
+		<LinearLayout
+		    android:id="@+id/lay_scooter"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="1"
+		    android:gravity="center_horizontal"
+		    android:orientation="vertical" >
+
+			<ImageView
+            android:id="@+id/img_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"             
+        android:scaleType="matrix"
+        android:clickable="true"
+        android:src="@drawable/tab_status_nor" />
+			<TextView
+            android:id="@+id/txt_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tab_scooter"
+            		android:textColor="#dcdcdc"
+			    android:textStyle="bold" 
+            android:textSize="15sp" />                
+		</LinearLayout>
+
+		<LinearLayout
+		    android:id="@+id/lay_settings"
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_weight="1"
+		    android:gravity="center_horizontal"
+		    android:orientation="vertical" >
+
+			<ImageView
+            android:id="@+id/img_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"             
+        android:scaleType="matrix"
+        android:clickable="true"
+        android:src="@drawable/tab_set_nor" />
+
+			<TextView
+            android:id="@+id/txt_more"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:text="@string/lay_settings"
+			    android:textColor="#dcdcdc"
+			    android:textSize="15sp"
+			    android:textStyle="bold" />
+                
+		</LinearLayout>
+
+	</LinearLayout>
+
+
+	<com.hylh.scooterstg.view.MyViewPager
+        android:id="@+id/tabpager"
+       android:layout_above="@id/buttom_bar_group" 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" > 
+	</com.hylh.scooterstg.view.MyViewPager>  
+
+</RelativeLayout>

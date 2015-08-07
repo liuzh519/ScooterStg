@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 应用 -->
+    <string name="app_about_info">Scootaway</string>
+    <string name="app_settings">系统设定</string>
+    <string name="app_null"></string>
+    <string name="app_name">Scootaway</string>
+    <string name="app_cancle">取消</string>
+    <string name="app_change_user">注销用户</string>
+    <string name="app_exit_user">退出</string>
+    <string name="app_about">关于</string>
+    <string name="lang">zh-cn</string>
+    <string name="back">返回</string>
+    <string name="btn_next">下一步</string>
+    <string name="btn_confirm">确定</string>
+    <string name="btn_cancel">取消</string>
+    <string name="btn_vibrate">振动</string>
+    <string name="btn_sound">声音</string>
+    <string name="btn_warn_confirm">报警确认</string>
+    <string name="tv_loading">正加载,请稍后...</string>
+    <string name="execute_plsease_wait">执行中,请稍后...</string>
+    <string name="no_data">网络异常...</string>
+    <string name="confirm">确认</string>
+    <string name="error">错误</string>
+	<string name="wait_gps">等待定位</string>
+    
+    <!-- notify  -->
+    <string name="notify_title">运行中...</string>
+    
+    <!-- 首页 -->
+    <string name="tab_control">控制</string>
+    <string name="tab_warn">报警</string>
+    <string name="tab_status">状态</string>
+    <string name="tab_track">定位</string>
+    <string name="tab_more">更多</string>
+    <string name="tab_more_title">设置</string>
+    <string name="tab_track_title">设备定位</string>
+    <string name="rpt_map_select">请选择地图</string>
+    <string name="rpt_map_baidu">百度地图</string>
+    <string name="rpt_map_google">google地图</string>
+
+    
+    <!-- 异常 -->
+    <string name="result_title_suc">成功</string>
+    <string name="result_title_err">失败</string>
+    <string name="result_btn">确定</string>
+    <string name="result_use_sms">\n使用短信发送命令?</string>
+    <string name="result_cancel">取消</string>
+    <string name="result_err">处理异常</string>
+    <string name="result_success">交易成功</string>
+    
+    <string name="excepton_error">错误</string>
+    <string name="exception_usr_name_emtpy">用户名不能少于4位</string>
+    <string name="exception_usr_pwd_emtpy">密码不能少于6位</string>
+    <string name="exception_usr_phone_emtpy">手机号码不能少于8位</string>
+    
+    <string name="exception_response">解释响应报文错误</string>
+    <string name="exception_unknown">未知异常</string>
+    <string name="exception_memory">申请内存失败</string>
+    <string name="exception_read_timeout">读取响应超时</string>
+    <string name="exception_read_failed">读取响应失败</string>
+    <string name="exception_invalid">无效响应</string>
+    <string name="exception_network">网络错误</string>
+    <string name="exception_msmmgr">短信异常</string>
+    <string name="exception_sim_no">取手机号码失败</string>
+    <string name="exception_msm_sim">手机号码无效</string>
+    <string name="exception_connection">请连接网络</string>
+    <string name="exception_system">系统错误</string>
+    <string name="exception_cmd_not_support">命令没有配置</string>
+    <string name="exception_invalid_response">无效响应</string>
+    <string name="exception_javascript">Javascript脚本执行异常</string>
+    <string name="excepton_con_bluetooth_error">连接蓝牙异常</string>
+    
+    <!-- 账户 -->
+    <string name="user_settings">用户设定</string>
+    <string name="btn_password_set">修改密码</string>
+    <string name="btn_user_set">修改账户信息</string>
+    <string name="btn_user_adddev">添加设备</string>
+    <string name="btn_user_logout">注销用户</string>
+    <string name="btn_user_change">更换用户</string>
+    <string name="user_register_suc">创建用户成功</string>
+    
+    <string name="login_other">其它用户</string>
+    <string name="et_account_hint">账号</string>
+    <string name="et_password0_hint">旧密码</string>
+    <string name="et_password_hint">密码</string>
+    <string name="et_password2_hint">密码确认</string>
+    <string name="et_phone_hint">手机</string>
+    <string name="et_email_hint">邮箱</string>
+    <string name="register">新用户</string>
+    <string name="login">登入</string>
+    <string name="forget_password">忘记密码?</string>
+    <string name="tv_xieyi">我已阅读并同意</string>
+    <string name="tv_xieyi_url">使用条款和隐私政策</string>
+    <string name="tv_tiaokuan">服务声明</string>
+    <string name="tv_register_success">注册成功</string>
+    <string name="register_complete">完成</string>
+    <string name="register_send">注册</string>
+    <string name="title_pattern_invalid">无效手势代码</string>
+    <string name="title_pattern_check">绘制解锁图案</string>
+    <string name="title_pattern_set">请设置手势密码</string>
+    <string name="title_pattern_times">重新输入手势密码</string>
+    <string name="title_pattern_notfit">两次密码不一次，请重新输入</string>
+    <string name="title_register_user">填写用户信息</string>
+    <string name="title_register_device">设置设备信息</string>
+    <string name="title_register_success">登陆成功设置手势密码</string>
+    <string name="login_pattren_failed">手势错误你还有%s次机会</string>
+    <string name="login_pattren_error">请重新登陆</string>
+    
+    <string name="usr_error_name_emtpy">无效用户名</string>
+    <string name="usr_error_pwd_emtpy">无效密码</string>
+    <string name="usr_error_phone_emtpy">无效电话号码</string>
+	<string name="usr_error_tid_emtpy">无效终端ID</string>
+	<string name="usr_error_tcode_emtpy">无效激活码</string>
+    <string name="usr_error_email_invalid">无效邮箱地址</string>
+    
+    <!-- 控制 -->
+    <string name="contoll_km">km</string>
+    <string name="contoll_km2">km</string>
+    <string name="contoll_kmh">km/h</string>
+    <string name="contoll_v">v</string>
+    <string name="contoll_0.0">0.0</string>
+    <string name="contoll_0">0</string>
+    <string name="contoll_00">00</string>
+    <string name="contoll_000000">000000</string>
+    <string name="contoll_88.8">88.8</string>
+    <string name="contoll_88">88</string>
+    <string name="contoll_888">888</string>
+    <string name="contoll_8888">8888</string>
+    <string name="contoll_8888.8">8888.8</string>
+    <string name="contoll_888888">888888</string>
+    <string name="contoll_kr_text1">전압</string>
+    <string name="contoll_kr_text2">주행거리</string>
+    <string name="contoll_kr_text3">최고속도</string>
+    
+    <string name="cmd_ctrl_bt">蓝牙</string>
+    <string name="cmd_ctrl_sms">短信</string>
+    <string name="cmd_ctrl_tcp">网络</string>
+    
+    <string name="openTrack">打开尾箱</string>
+    <string name="ctrl_title">设备控制</string>
+    
+    
+    <!-- 设备 -->
+    <string name="dev_ctrl_more_ctrl0">重置蓝牙密钥</string>
+    <string name="dev_ctrl_more_ctrl1">静音设防</string>
+    <string name="dev_ctrl_more_ctrl2">开启尾箱</string>
+    <string name="dev_ctrl_more_ctrl3">升窗</string>
+    <string name="dev_ctrl_more_ctrl4">监听</string>
+    <string name="dev_ctrl_more_ctrl5">防抢</string>
+    <string name="dev_ctrl_more_ctrl6">彩信定位</string>
+    <string name="dev_ctrl_more_ctrl8">录像</string>
+    <string name="dev_ctrl_more_ctrl9">停止录像</string>
+    <string name="dev_ctrl_more_ctrl10">拍照</string>
+    <string name="dev_ctrl_more_ctrl11">开启振动</string>
+    <string name="dev_ctrl_more_ctrl12">关闭震动</string>
+    <string name="dev_ctrl_more_ctrl13">开启遥控器</string>
+    <string name="dev_ctrl_more_ctrl14">关闭遥控器</string>
+    <string name="dev_ctrl_more_ctrl15">学习防盗器</string>
+    <string name="dev_ctrl_more_ctr116">遥控器设防发短信</string>
+    <string name="dev_ctrl_more_ctrl17">遥控器设防不发短信</string>
+    <string name="dev_ctrl_more_ctrl18">遥控器撤防发短信</string>
+    <string name="dev_ctrl_more_ctrl19">遥控器撤防不发短信</string>
+    <string name="dev_ctrl_more_ctrl20">开始GPS信号短信通知</string>
+    <string name="dev_ctrl_more_ctrl21">关闭GPS信号短信通知</string>
+    <string name="dev_ctrl_more_ctrl22">开启电子围栏</string>
+    <string name="dev_ctrl_more_ctrl23">关闭电子围栏</string>
+    <string name="dev_ctrl_more_ctrl24">开启低温启动</string>
+    <string name="dev_ctrl_more_ctrl25">关闭低温启动</string>
+    <string name="dev_ctrl_more_ctrl26">开始定时启动</string>
+    <string name="dev_ctrl_more_ctrl27">关闭定时启动</string>
+    <string name="dev_ctrl_more_ctrl28">点火时间0.6秒</string>
+    <string name="dev_ctrl_more_ctrl29">点火时间0.8秒</string>
+    <string name="dev_ctrl_more_ctrl30">点火时间1.0秒</string>
+    
+    <string name="dev_ctrl_more_ctrl39">超速80公里提示</string>
+    <string name="dev_ctrl_more_ctrl40">超速90公里提示</string>
+    <string name="dev_ctrl_more_ctrl41">超速100公里提示</string>
+    <string name="dev_ctrl_more_ctrl42">超速110公里提示</string>
+    <string name="dev_ctrl_more_ctrl43">超速120公里提示</string>
+    <string name="dev_ctrl_more_ctrl44">关闭超速提示</string>
+    
+    
+    <!-- 设备 -->
+    <string name="dev_set_title">设备设置</string>
+    <string name="et_dev_phone_hint">设备手机号码</string>
+    <string name="et_dev_name_hint">设备名称</string>
+    <string name="et_dev_code_hint">设备激活码</string>
+    <string name="et_devid_hint">设备号码</string>
+    <string name="query">查询</string>
+    <string name="set">设置</string>
+    <string name="dev_ctrl_more">更多控制</string>
+    <string name="dev_status">状态</string>
+    <string name="dev_warn">报警</string>
+    
+    
+    <string name="request_refresh">更新数据中</string>
+    <string name="status_open">打开</string>
+    <string name="status_close">关闭</string>
+    <string name="status_lock">上锁</string>
+    <string name="status_unlock">解锁</string>
+    <string name="status_yes">是</string>
+    <string name="status_no">否</string>
+    <string name="status_normal">正常</string>
+    <string name="status_unnormal">异常</string>
+    <string name="status_gps_o_s">开路</string>
+    <string name="status_gps_c_s">短路</string>
+    <string name="status_power_car">主电源</string>
+    <string name="status_power_batt">电池</string>
+    <string name="status_acc">ACC状态</string>
+    <string name="status_ignition">发动机</string>
+    <string name="status_brake">刹车</string>
+    <string name="status_hand_brake">手刹</string>
+    <string name="status_exp1_st">万能端口1</string>
+    <string name="status_exp2_st">万能端口2</string>
+    <string name="status_air">空调:</string>
+    <string name="status_door_lu">车门(上锁/解锁):</string>
+    <string name="status_door_oc">车门(打开/关闭):</string>
+    <string name="status_power">电源:</string>
+    <string name="status_power_fuel">断油电状态:</string>
+    <string name="status_sos">SOS:</string>
+    <string name="status_gps_o">GPS天线开路:</string>
+    <string name="status_gps_c">GPS天线短路:</string>
+    <string name="status_ospd">超速驾使:</string>
+    <string name="status_exp1_io">万能端口1IO:</string>
+    <string name="status_exp2_io">万能端口2IO:</string>
+    <string name="status_flash">FLASH:</string>
+    <string name="status_fram">FRAM:</string>
+    <string name="status_odrv">疲劳驾使:</string>
+    <string name="status_motor_club">拖吊报警:</string>
+    <string name="status_gpssig">GPS信号:</string>
+    <string name="status_gsmsig">GSM信号:</string>
+    <string name="status_trunk">车尾箱:</string>
+    <string name="status_light">大灯:</string>
+    <string name="status_hood">车篷:</string>
+    <string name="status_panic">警告:</string>
+    <string name="status_anti_1">抢车模式</string>
+    <string name="status_anti_2">加锁模式</string>
+    <string name="status_anti_3">解锁模式</string>
+    <string name="status_anti_4">修车模式</string>
+    <string name="status_anti_5">开始启动</string>
+    <string name="status_anti_6">启动中</string>
+    <string name="status_anti_7">行驶中</string>
+    <string name="status_anti_8">加锁异常</string>
+    <string name="status_security_system_state">系统安全状态:</string>
+    <string name="status_security_system_triggered">系统安全设置:</string>
+    
+    
+    <!-- 报表 -->
+    <string name="rpt_warning_type_4">GPRS重启</string>
+    <string name="rpt_warning_type_8">后备电池</string>
+    <string name="rpt_warning_type_10">非法点火</string>
+    <string name="rpt_warning_type_22">外设温度</string>
+    <string name="rpt_warning_type_28">防盗器</string>
+    
+    <string name="rpt_query_title">查询条件</string>
+    <string name="rpt_dev">设备</string>
+    <string name="rpt_begin_date">开始日期</string>
+    <string name="rpt_end_date">结束日期</string>
+    <string name="rpt_title">报表管理</string>
+    <string name="rpt_title_image">图片抓拍报表</string>
+    <string name="rpt_title_warn">报警报表</string>
+    <string name="rpt_title_history">历史轨迹</string>
+    <string name="rpt_title_dis">里程报表</string>
+    <string name="rpt_title_fuel">油位报表</string>
+    <string name="rpt_title_run">运行报表</string>
+    <string name="rpt_title_park">停车报表</string>
+    <string name="rpt_title_glide">滑行报表</string>
+    <string name="rpt_title_login">登录日志</string>
+    <string name="rpt_title_operator">操作日志</string>
+    
+    <string name="last_update_time">最近更新:</string>
+    <string name="pull_for_update">下拉可以刷新</string>
+    <string name="lost_for_more">松开获取更多</string>
+    <string name="loadding">载入中.....</string>
+    <string name="show_more">查看更多</string>
+    <string name="load_finish">加载完毕</string>
+    
+    <string name="rpt_query">查询</string>
+    <string name="rpt_cancel">取消</string>
+    <string name="rpt_result">结果</string>
+    <string name="rpt_operator">操作</string>
+    <string name="rpt_chnl">渠道</string>
+    <string name="rpt_time">时间</string>
+    <string name="rpt_remote">终端</string>
+    <string name="rpt_agent">代理</string>
+    
+    <!-- 更多 -->
+    <string name="more_expire_date">账户有效期</string>
+    <string name="more_expire_never">永不过期</string>
+    <string name="more_pattern_paswd">设置手执密码</string>
+    <string name="more_change_user">更换用户</string>
+    <string name="more_setting">设置</string>
+    <string name="more_update">软件更新</string>
+    <string name="more_report">报表管理</string>
+    <string name="more_dev_set">设备设置</string>
+    <string name="more_dev_ctrl">设备控制</string>
+    <string name="more_vecl_setting">设备设置</string>
+    <string name="more_bt_key">重置设备蓝牙密钥</string>
+    
+    
+    <string name="soft_update_no">已经是最新版本</string>
+    <string name="soft_update_title">软件更新</string>
+    <string name="soft_update_info">检测到新版本，立即更新吗</string>
+    <string name="soft_update_updatebtn">更新</string>
+    <string name="soft_update_later">跳过这个版本</string>
+    <string name="soft_updating">正在更新</string>
+    <string name="soft_update_cancel">取消</string>
+    
+</resources>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <com.hylh.scooterstg.view.TitleBarView
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fragment_title_head" />
+    
+	<RelativeLayout
+	    android:id="@+id/map_layout"
+		android:layout_below="@+id/title_bar"
+        android:layout_height="fill_parent"
+	    android:layout_width="fill_parent">
+
+		<WebView
+		    android:id="@+id/webView1"
+		    android:layout_width="match_parent"
+		    android:layout_height="match_parent"
+		    android:layout_centerHorizontal="true"
+		    android:layout_centerVertical="true" />
+	</RelativeLayout>
+	
+	<!-- added by ycf on 20150725 begin -->
+	<RelativeLayout
+        android:id="@+id/ud_mg_rlayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@xml/relative_radio"
+        android:visibility="gone" >
+
+        <LinearLayout
+            android:id="@+id/ud_mg_llayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tv_mg_title"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_margin="20dp"
+                android:gravity="center"
+                android:text="User Agreement Acknowledgement Failed"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:id="@+id/tv_mg_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="0.1dp"
+                android:gravity="center"
+                android:text="Make sure your mobile device is connected to the internet then try again."
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textSize="30px" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="0dp"
+                android:background="@color/devide_line" />
+
+            <Button
+                android:id="@+id/btn_mg_ok"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_margin="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/btn_road_button"
+                android:text="OK"
+                android:textColor="@color/blue"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </RelativeLayout>
+    	<!-- added by ycf on 20150725 end -->
+
+</RelativeLayout>
