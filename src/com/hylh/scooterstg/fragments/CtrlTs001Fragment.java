@@ -173,6 +173,8 @@ public class CtrlTs001Fragment extends Fragment
 		
 		public void handleMessage(Message msg) {
 			
+			Utils.dismissProcess();
+			
 			Log.i(TAG, "use machine positon to locate the park");
 			
 			if( msg.arg1 == 0 ){
@@ -233,6 +235,7 @@ public class CtrlTs001Fragment extends Fragment
 				
 				String code = (String)msg.obj;
 				if("1107".equals(code)){
+					
 					rfTitleTv.setText(getResources().getString(R.string.title_return_fail_1));
 					rfMsgTv.setText(getResources().getString(R.string.msg_return_fail_1));
 					rtnFailLayout.setVisibility(View.VISIBLE);
@@ -261,6 +264,7 @@ public class CtrlTs001Fragment extends Fragment
 			}
 			
 			//added by ycf on 20150725 end
+			
 			
 		};
 	};
@@ -469,7 +473,7 @@ public class CtrlTs001Fragment extends Fragment
 		btnReturn.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				returnLayout.setVisibility(View.GONE);
+				returnLayout.setVisibility(View.VISIBLE);
 			}
 		});
 		
@@ -496,6 +500,7 @@ public class CtrlTs001Fragment extends Fragment
 								//1. 還車時，停車場位置應用車子位置查詢，而不是用戶手機位置。
 								//add by ycf on 20150626 begin
 								params.add(new BasicNameValuePair("query", "rental" ));  
+								returnLayout.setVisibility(View.GONE);
 								mApp.getCmd().sendHttpsGet(Utils.urlUser, params, mApp, mLocation, Command.MODE_TOAST);
 								params.clear();
 								//add by ycf on 20150626 end
@@ -586,6 +591,7 @@ public class CtrlTs001Fragment extends Fragment
 									params.add(new BasicNameValuePair("command", "open_trunk" ));  
 									params.add(new BasicNameValuePair("scooter_id", mSp.getTid() )); 
 									
+									returnLayout.setVisibility(View.GONE);
 									mApp.getCmd().sendHttpsGet( Utils.urlScooter, params, mContext, mEsat, Command.MODE_UNKNOWN);
 								}
 							})
