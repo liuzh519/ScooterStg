@@ -42,8 +42,9 @@ public class BindConfirmActivity extends FragmentActivity {
 	protected CheckBox check2;
 	protected CheckBox check3;
 	protected CheckBox check4;
-	protected CheckBox check5;
+	protected CheckBox check5;//modify by ycf on 20150808
 	protected CheckBox check6;
+	protected CheckBox check7;
     protected RelativeLayout rent;
     protected TextView text;
     protected RelativeLayout lconfirm;
@@ -183,8 +184,9 @@ public class BindConfirmActivity extends FragmentActivity {
 		check2=(CheckBox) findViewById(R.id.checkBox2);
 		check3=(CheckBox) findViewById(R.id.checkBox3);
 		check4=(CheckBox) findViewById(R.id.checkBox4);
-		check5=(CheckBox) findViewById(R.id.checkBox5);
+		check5=(CheckBox) findViewById(R.id.checkBox5);//modify ycf on 20150808
 		check6=(CheckBox) findViewById(R.id.checkBox6);
+		check7=(CheckBox) findViewById(R.id.checkBox7);
 		text=(TextView) findViewById(R.id.btn_txt);
 		rent = (RelativeLayout) findViewById(R.id.btn_scooter);
 		
@@ -221,8 +223,9 @@ public class BindConfirmActivity extends FragmentActivity {
 			check3.setChecked(true);
 			check4.setChecked(true);
 			check5.setChecked(true);
+			check6.setChecked(true);
 			//5. 用戶同意條款，每次重新登入時都必須讓用戶看到，並且在用戶同意時發送API request
-//			check6.setChecked(true);  //modify by ycf on 20150630
+//			check7.setChecked(true);  //modify by ycf on 20150630
 		}
 	}
 
@@ -251,7 +254,7 @@ public class BindConfirmActivity extends FragmentActivity {
 				it.putExtra("url", Utils.urlVideo);
 				it.putExtra("mode", "full");
 				startActivity(it);
-				check5.setChecked(true);
+				check6.setChecked(true);
 			}
 		});
 	    
@@ -274,7 +277,7 @@ public class BindConfirmActivity extends FragmentActivity {
 				linfo.setVisibility(View.GONE);
 				if( SpUtil.getInstance().getInt( SpUtil.LOGIN_KEEP, 0 ) > 0 ){//登录状态
 					
-					if( checkStatus() == 0 || checkStatus() == 6){//modify by ycf on 20150723 
+					if( checkStatus() == 0 || checkStatus() == 7){//modify by ycf on 20150723 
 				        	Utils.showProcess(mContext);
 							List<BasicNameValuePair> params = new LinkedList<BasicNameValuePair>();  
 							params.add(new BasicNameValuePair("key", SpUtil.getInstance().getSTKey())); 
@@ -343,7 +346,7 @@ public class BindConfirmActivity extends FragmentActivity {
 				//added by ycf on 20150723 end
 				
 				if( checkStatus() == 0 ){
-					if( !check5.isChecked() ){
+					if( !check6.isChecked() ){
 						linfo.setVisibility(View.VISIBLE);
 					} else {
 			        	Utils.showProcess(mContext);
@@ -401,6 +404,12 @@ public class BindConfirmActivity extends FragmentActivity {
 		check6.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 			@Override
 			public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
+				checkStatus();
+			}
+        });
+		check7.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+			@Override
+			public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
 				if( arg1 ){
 					if( mSp.showLegal() ){
 						Intent it = new Intent(mContext, WebkitActivity.class);  
@@ -434,12 +443,16 @@ public class BindConfirmActivity extends FragmentActivity {
 			return 4;
 		}
 		if( !check5.isChecked() ){
-//			text.setTextColor( getResources().getColor(color.gray) );
-//			return 5;
+			text.setTextColor( getResources().getColor(color.gray) );
+			return 5;
 		}
 		if( !check6.isChecked() ){
+//			text.setTextColor( getResources().getColor(color.gray) );
+//			return 6;
+		}
+		if( !check7.isChecked() ){
 			text.setTextColor( getResources().getColor(color.gray) );
-			return 6;
+			return 7;
 		}
 
 		text.setTextColor( getResources().getColor(color.blue) );
@@ -466,9 +479,9 @@ public class BindConfirmActivity extends FragmentActivity {
 		if( mSp != null ){
 //			if( mSp.getInt( SpUtil.LOGIN_KEEP, 0 ) > 0 ){
 				if( mSp.showLegal() ){
-					check6.setChecked(false);
+					check7.setChecked(false);
 		    	} else {
-		    		check6.setChecked(true);
+		    		check7.setChecked(true);
 		    	}
 //			} else {
 //				
