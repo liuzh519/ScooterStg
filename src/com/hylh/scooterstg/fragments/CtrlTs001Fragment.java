@@ -356,7 +356,7 @@ public class CtrlTs001Fragment extends Fragment
 					List<BasicNameValuePair> params = new LinkedList<BasicNameValuePair>();  
 					params.add(new BasicNameValuePair("key", SpUtil.getInstance().getSTKey())); 
 					params.add(new BasicNameValuePair("command", "return" ));  
-					params.add(new BasicNameValuePair("parking_station_id", id ));  
+//					params.add(new BasicNameValuePair("parking_station_id", id ));  //modify by ycf on 20150811 
 					params.add(new BasicNameValuePair("scooter_id", mSp.getTid() )); 
 					
 					mApp.getCmd().sendHttpsGet( Utils.urlScooter, params, mContext, mUnBind, Command.MODE_SILENT);
