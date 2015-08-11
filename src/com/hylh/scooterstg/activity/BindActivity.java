@@ -118,18 +118,18 @@ public class BindActivity extends FragmentActivity {
 				}
 	        	//modify by ycf on 20150811 begin
 	        	/*
-	        	  A.ÓÃ‘ôßxºÃÜ‡Ì–áá£¬°´ÏÂ"rent"°´âo (Èç¸½™n select scooter page)
-	        	    B.³ö¬F"ÓÃ‘ôÍ¬Òâ—l¿î" ÏÂ·½ï@Ê¾"agree"£¬ÓÒÉÏ·½ï@Ê¾ "cancel" (Èç¸½™n member agreement page)
+	        	  A.ç”¨æˆ¶é¸å¥½è»Šè™Ÿå¾Œï¼ŒæŒ‰ä¸‹"rent"æŒ‰éˆ• (å¦‚é™„æª” select scooter page)
+	        	    B.å‡ºç¾"ç”¨æˆ¶åŒæ„æ¢æ¬¾" ä¸‹æ–¹é¡¯ç¤º"agree"ï¼Œå³ä¸Šæ–¹é¡¯ç¤º "cancel" (å¦‚é™„æª” member agreement page)
 	        	    C.
-	        	        i.ÓÃ‘ôßx“ñagreeáá£¬®‹Ãæ»Øµ½ÕJÖªí“Ãæ£¬Í¬•rÏÂ·½µÚÆßücßxí—×Ô„Ó´ò¹´ (ÈçˆDacknowledgement page)
-	        	        ii.ÓÃ‘ôÈôßx“ñcancel£¬®‹ÃæÒ»˜Ó»Øµ½ÕJÖªí“Ãæ£¬µ«ÏÂ·½µÚÆßücßxí—²»´ò¹´
-	        	    D.³ıÁËµÚÁùüc¿Éßx»ò²»ßxÖ®Íâ£¬ÆäËûßxí—¶¼±Øíš¹´ßxáá²ÅÄÜ×ŒÓÃ‘ô°´ÏÂÏÂ·½´_ÕJ×âÜ‡°´âo¡£*/
+	        	        i.ç”¨æˆ¶é¸æ“‡agreeå¾Œï¼Œç•«é¢å›åˆ°èªçŸ¥é é¢ï¼ŒåŒæ™‚ä¸‹æ–¹ç¬¬ä¸ƒé»é¸é …è‡ªå‹•æ‰“å‹¾ (å¦‚åœ–acknowledgement page)
+	        	        ii.ç”¨æˆ¶è‹¥é¸æ“‡cancelï¼Œç•«é¢ä¸€æ¨£å›åˆ°èªçŸ¥é é¢ï¼Œä½†ä¸‹æ–¹ç¬¬ä¸ƒé»é¸é …ä¸æ‰“å‹¾
+	        	    D.é™¤äº†ç¬¬å…­é»å¯é¸æˆ–ä¸é¸ä¹‹å¤–ï¼Œå…¶ä»–é¸é …éƒ½å¿…é ˆå‹¾é¸å¾Œæ‰èƒ½è®“ç”¨æˆ¶æŒ‰ä¸‹ä¸‹æ–¹ç¢ºèªç§Ÿè»ŠæŒ‰éˆ•ã€‚*/
 				Intent intent=new Intent(mContext, WebkitActivity.class);
 				intent.putExtra("tid", tid);
 				intent.putExtra("num", num);
 				intent.putExtra("title", "Member Agreement");
 				intent.putExtra("mode", "rent");
-				intent.putExtra("url", Utils.urlAgreement);
+				intent.putExtra("url", Utils.urlLegal);
 				mContext.startActivity(intent);
 	        	//modify by ycf on 20150811 end
 	        	
