@@ -9,10 +9,50 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/fragment_title_head" />
     
+    
+ 		<RelativeLayout android:id="@+id/bottom_rlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@xml/relative_radio"
+         android:layout_alignParentBottom="true"
+        android:visibility="gone"> 
+		    	<LinearLayout
+		    android:id="@+id/bottom_llayout"
+		    android:layout_width="match_parent"
+		    android:layout_height="@dimen/fragment_title_head"
+		    android:gravity="center_horizontal"
+		    android:orientation="vertical" 
+		    >
+		    	        <View
+		            android:layout_width="match_parent"
+		            android:layout_height="0.5dp"
+		            android:layout_marginTop="0dp"
+		            android:background="@color/devide_line" />
+		    	        
+		    	    	<Button
+			    android:id="@+id/bottom_btn"
+			    android:layout_width="wrap_content"
+			    android:layout_height="40dp"
+			    android:layout_centerVertical="true"
+			    android:layout_marginLeft="5dp"
+			    android:background="@color/white"
+			    android:textColor="@color/blue"
+			    android:text="Accept Member Agreement"
+			    android:textSize="16sp" />
+		    	    
+		    	</LinearLayout>
+		    
+		</RelativeLayout>
+    
 	<RelativeLayout
 	    android:id="@+id/map_layout"
 		android:layout_below="@+id/title_bar"
-        android:layout_height="fill_parent"
+		android:layout_above="@+id/bottom_rlayout"
+        android:layout_height="match_parent"
 	    android:layout_width="fill_parent">
 
 		<WebView
@@ -23,7 +63,7 @@
 		    android:layout_centerVertical="true" />
 	</RelativeLayout>
 	
-	<!-- added by ycf on 20150725 begin -->
+		<!-- added by ycf on 20150725 begin -->
 	<RelativeLayout
         android:id="@+id/ud_mg_rlayout"
         android:layout_width="fill_parent"
@@ -80,6 +120,7 @@
                 android:textSize="18sp" />
         </LinearLayout>
     </RelativeLayout>
+    
     	<!-- added by ycf on 20150725 end -->
 
 </RelativeLayout>

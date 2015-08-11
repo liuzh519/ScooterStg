@@ -1,14 +1,20 @@
 package com.hylh.scooterstg.activity;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
-import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
+
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -19,26 +25,12 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.hylh.scooterstg.R;
-import com.hylh.scooterstg.cmd.Command;
-import com.hylh.scooterstg.utils.ErrUtils;
-import com.hylh.scooterstg.utils.MediaUtil;
 import com.hylh.scooterstg.utils.MyApplication;
 import com.hylh.scooterstg.utils.SpUtil;
 import com.hylh.scooterstg.utils.StatusUtils;
 import com.hylh.scooterstg.utils.Utils;
 import com.hylh.scooterstg.view.PickerView;
 import com.hylh.scooterstg.view.TitleBarView;
-
-import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
-import android.support.v4.app.FragmentActivity;
-import android.util.Log;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
 
 public class BindActivity extends FragmentActivity {
 	private MyApplication mApp;
@@ -124,12 +116,23 @@ public class BindActivity extends FragmentActivity {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-	        	{
-					Intent intent=new Intent(mContext, BindConfirmActivity.class);
-					intent.putExtra("tid", tid);
-					intent.putExtra("num", num);
-					mContext.startActivity(intent);
-	        	}
+	        	//modify by ycf on 20150811 begin
+	        	/*
+	        	  A.用戶選好車號後，按下"rent"按鈕 (如附檔 select scooter page)
+	        	    B.出現"用戶同意條款" 下方顯示"agree"，右上方顯示 "cancel" (如附檔 member agreement page)
+	        	    C.
+	        	        i.用戶選擇agree後，畫面回到認知頁面，同時下方第七點選項自動打勾 (如圖acknowledgement page)
+	        	        ii.用戶若選擇cancel，畫面一樣回到認知頁面，但下方第七點選項不打勾
+	        	    D.除了第六點可選或不選之外，其他選項都必須勾選後才能讓用戶按下下方確認租車按鈕。*/
+				Intent intent=new Intent(mContext, WebkitActivity.class);
+				intent.putExtra("tid", tid);
+				intent.putExtra("num", num);
+				intent.putExtra("title", "Member Agreement");
+				intent.putExtra("mode", "rent");
+				intent.putExtra("url", Utils.urlAgreement);
+				mContext.startActivity(intent);
+	        	//modify by ycf on 20150811 end
+	        	
 //	        	Utils.showProcess(mContext);
 //				List<BasicNameValuePair> params = new LinkedList<BasicNameValuePair>();  
 //				params.add(new BasicNameValuePair("key", SpUtil.getInstance().getSTKey())); 

@@ -7,6 +7,7 @@ import org.apache.http.message.BasicNameValuePair;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -22,6 +23,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.hylh.scooterstg.R;
@@ -37,6 +39,9 @@ public class WebkitActivity extends Activity {
 	private String mMode;
 
 	//added by ycf on 20150725 begin
+	private Context mContext;
+	private RelativeLayout bottomLayout;
+	private Button bottomBtn;
 	private RelativeLayout mgLayout; 
 	private Button btnMgOk;
 	//added by ycf on 20150725 end
@@ -93,6 +98,7 @@ public class WebkitActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_webkit);
+		mContext = this;
 		findView();
 		initView();
 		init();
@@ -104,6 +110,8 @@ public class WebkitActivity extends Activity {
 		//added by ycf on 20150725 begin
 		mgLayout = (RelativeLayout)findViewById(R.id.ud_mg_rlayout);
 		btnMgOk = (Button)findViewById(R.id.btn_mg_ok);
+		bottomLayout = (RelativeLayout)findViewById(R.id.bottom_rlayout);
+		bottomBtn = (Button)findViewById(R.id.bottom_btn);
 		//added by ycf on 20150725 end
 	}
 	
@@ -125,7 +133,19 @@ public class WebkitActivity extends Activity {
 					params.add(new BasicNameValuePair("acknowledge", "user_agreement" ));  
 					
 					MyApplication.getInstance().getCmd().sendHttpsPut( Utils.urlAgreement, params, WebkitActivity.this, mQuery, Command.MODE_SILENT);
-				} else {
+				}else if("rent".equals(mMode)){//added by ycf on 20150811 begin
+					
+					Intent intent=new Intent(mContext, BindConfirmActivity.class);
+
+					String tid = intent.getStringExtra( "tid" );
+					String num = intent.getStringExtra( "num" );
+					
+					intent.putExtra("tid", tid);
+					intent.putExtra("num", num);
+					intent.putExtra("action","cancle");
+					startActivity(intent);
+					
+				}else {//added by ycf on 20150811 end
 					finish();
 				}
 			}
@@ -140,6 +160,23 @@ public class WebkitActivity extends Activity {
 			}
 			
 		});
+		
+		bottomBtn.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent intent=new Intent(mContext, BindConfirmActivity.class);
+
+				String tid = intent.getStringExtra( "tid" );
+				String num = intent.getStringExtra( "num" );
+				
+				intent.putExtra("tid", tid);
+				intent.putExtra("num", num);
+				intent.putExtra("action","accept");
+				startActivity(intent);
+			}
+		});
+		
 		//added by ycf on 20150725 end
 	}
 
@@ -161,6 +198,13 @@ public class WebkitActivity extends Activity {
 			|| mMode.compareTo("legal") == 0 ){
 			mTitleBarView.setBtnLeft(R.drawable.boss_unipay_icon_back, R.string.done);
 		}
+		
+		//added by ycf on 20150811 begin
+		if("rent".equals(mMode)){
+			mTitleBarView.setBtnLeft(R.drawable.boss_unipay_icon_back, R.string.btn_cancel);
+			bottomLayout.setVisibility(View.VISIBLE);
+		}
+		//added by ycf on 20150811 end
 		mTitleBarView.setTitleText(title);
         
 //		webview.setWebViewClient( new WebViewClient() );

@@ -103,7 +103,7 @@ public class CtrlTs001Fragment extends Fragment
 					//modify by ycf on 20150725 begin
 					//解鎖連線失敗顯示
 //					Utils.showDialog("Error", ErrUtils.getUnlock( code ), R.drawable.icon_error, mContext, null);
-					ToastUtil.makeText(mContext, getResources().getString(R.string.title_network_error), Toast.LENGTH_SHORT);
+					ToastUtil.makeText(mContext, getResources().getString(R.string.text_ctrl_scootaway_fail), Toast.LENGTH_SHORT);
 					//modify by ycf on 20150725 end
 				}
 			}else{
@@ -137,7 +137,7 @@ public class CtrlTs001Fragment extends Fragment
 					//modify by ycf on 20150725 begin
 					//開尾箱連線失敗顯示
 //					Utils.showDialog("Error", ErrUtils.getTrunk( (String)msg.obj ), R.drawable.icon_error, mContext, null);
-					ToastUtil.makeText(mContext, getResources().getString(R.string.title_network_error), Toast.LENGTH_SHORT);
+					ToastUtil.makeText(mContext, getResources().getString(R.string.text_ctrl_scootaway_fail), Toast.LENGTH_SHORT);
 					//modify by ycf on 20150725 end
 				}
 			}else{
@@ -224,7 +224,7 @@ public class CtrlTs001Fragment extends Fragment
 
 				}
 			}else if( msg.arg1 == -1 ){//added by ycf on 20150725 begin //還車連線失敗顯示
-				ToastUtil.makeText(mContext, getResources().getString(R.string.title_network_error), Toast.LENGTH_SHORT);
+				ToastUtil.makeText(mContext, getResources().getString(R.string.text_ctrl_scootaway_fail), Toast.LENGTH_SHORT);
 			}else if( msg.arg1 == -2){
 				
 				supportRtnLayout.setVisibility(View.VISIBLE);

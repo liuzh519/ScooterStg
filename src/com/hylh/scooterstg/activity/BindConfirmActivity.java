@@ -370,6 +370,15 @@ public class BindConfirmActivity extends FragmentActivity {
 		tid = intent.getStringExtra( "tid" );
 		num = intent.getStringExtra( "num" );
 		mSp.setLegal(true);
+		//added by ycf on 20150811 begin
+		String action = intent.getStringExtra("action");
+		if("accept".equals(action)){
+			check7.setChecked(true);
+		}else if("cancle".equals(action)){
+			check7.setChecked(false);
+		}//added by ycf on 20150811 end
+		
+		this.checkStatus();
 		
 		check1.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 			@Override
@@ -410,16 +419,18 @@ public class BindConfirmActivity extends FragmentActivity {
 		check7.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 			@Override
 			public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
-				if( arg1 ){
-					if( mSp.showLegal() ){
-						Intent it = new Intent(mContext, WebkitActivity.class);  
-						it.putExtra("url", Utils.urlLegal);
-						it.putExtra("mode", "legal");
-						it.putExtra("title", R.string.title_legal );
-						
-						startActivity(it);
-					}
-				}
+				//modify by ycf on 20150811 begin
+//				if( arg1 ){
+//					if( mSp.showLegal() ){
+//						Intent it = new Intent(mContext, WebkitActivity.class);  
+//						it.putExtra("url", Utils.urlLegal);
+//						it.putExtra("mode", "legal");
+//						it.putExtra("title", R.string.title_legal );
+//						
+//						startActivity(it);
+//					}
+//				}
+				//modify by ycf on 20150811 end
 				checkStatus();
 			}
         });
@@ -476,17 +487,19 @@ public class BindConfirmActivity extends FragmentActivity {
 	@Override
 	public void onResume() {
 		super.onResume();
-		if( mSp != null ){
-//			if( mSp.getInt( SpUtil.LOGIN_KEEP, 0 ) > 0 ){
-				if( mSp.showLegal() ){
-					check7.setChecked(false);
-		    	} else {
-		    		check7.setChecked(true);
-		    	}
-//			} else {
-//				
-//			}
-		}
+		//modify by ycf on 20150811 begin
+//		if( mSp != null ){
+////			if( mSp.getInt( SpUtil.LOGIN_KEEP, 0 ) > 0 ){
+//				if( mSp.showLegal() ){
+//					check7.setChecked(false);
+//		    	} else {
+//		    		check7.setChecked(true);
+//		    	}
+////			} else {
+////				
+////			}
+//		}
+		//modify by ycf on 20150811 end
 	}
 
 	@Override
