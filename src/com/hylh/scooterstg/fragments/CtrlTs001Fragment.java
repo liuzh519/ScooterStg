@@ -499,6 +499,8 @@ public class CtrlTs001Fragment extends Fragment
 
 			@Override
 			public void onClick(View v) {
+				
+				returnLayout.setVisibility(View.GONE);//added by ycf on 20150813
 
 				AlertDialog dialog = new AlertDialog.Builder(mContext)
 				.setTitle(getResources().getString(R.string.confirm))
@@ -597,6 +599,9 @@ public class CtrlTs001Fragment extends Fragment
 	    		Utils.showDialog(R.string.result_title_err, R.string.excepton_bind_scooter, mContext, null);
 	    		return;
 	    	}
+	    	
+	    	returnLayout.setVisibility(View.GONE);//added by ycf on 20150813
+	    	
 			AlertDialog dialog = new AlertDialog.Builder(mContext)
 					.setTitle(getResources().getString(R.string.confirm))
 					.setMessage(

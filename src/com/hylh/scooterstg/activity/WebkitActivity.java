@@ -44,6 +44,7 @@ public class WebkitActivity extends Activity {
 	private Button bottomBtn;
 	private RelativeLayout mgLayout; 
 	private Button btnMgOk;
+	private String tid,num;
 	//added by ycf on 20150725 end
 	
 	Handler mQuery = new Handler() {
@@ -136,10 +137,6 @@ public class WebkitActivity extends Activity {
 				}else if("rent".equals(mMode)){//added by ycf on 20150811 begin
 					
 					Intent intent=new Intent(mContext, BindConfirmActivity.class);
-
-					String tid = intent.getStringExtra( "tid" );
-					String num = intent.getStringExtra( "num" );
-					
 					intent.putExtra("tid", tid);
 					intent.putExtra("num", num);
 					intent.putExtra("action","cancle");
@@ -166,9 +163,6 @@ public class WebkitActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				Intent intent=new Intent(mContext, BindConfirmActivity.class);
-
-				String tid = intent.getStringExtra( "tid" );
-				String num = intent.getStringExtra( "num" );
 				
 				intent.putExtra("tid", tid);
 				intent.putExtra("num", num);
@@ -186,6 +180,12 @@ public class WebkitActivity extends Activity {
 		String url = intent.getStringExtra( "url" );
 		int title = intent.getIntExtra("title", R.string.app_null);
 		mMode = intent.getStringExtra( "mode" );
+		
+		//added by ycf on 20150812 begin
+		tid = intent.getStringExtra( "tid" );
+		num = intent.getStringExtra( "num" );
+		//added by ycf on 20150812 end
+		
 		if( mMode.compareTo( "full" ) == 0 ){
 //			webview.setWebChromeClient( new WebChromeClient() );	
 			webview.setWebViewClient(new MyWebViewClientClient());	

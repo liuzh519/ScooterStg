@@ -93,7 +93,7 @@ public class BindConfirmActivity extends FragmentActivity {
 				//3. 用戶租車每兩小時跳出提示 (Local notification)
 				//added by ycf on 20150716 begin
 //				showDialog(getResources().getString( R.string.result_title_suc), getResources().getString( R.string.result_success), R.drawable.icon_error);
-				Utils.noticeTimer.schedule(new TimerTask(){
+				Utils.getNoticeTimer().schedule(new TimerTask(){
 					@Override
 					public void run() {
 						 new Handler(){
