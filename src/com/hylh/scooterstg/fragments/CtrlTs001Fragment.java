@@ -128,12 +128,7 @@ public class CtrlTs001Fragment extends Fragment
 				String code = (String)msg.obj;
 				if( code.compareTo("1002") == 0 ){
 					Utils.login(mContext);
-				} else if("1201".equals(code)){//added by ycf on 20150806 begin
-					payFailMsgTv.setText(getResources().getString(R.string.text_payment_fail));
-					payFailTitleTipTv.setText(getResources().getString(R.string.title_payment_fail));
-					alphaRl.setVisibility(View.VISIBLE);
-					paymentFailRl.setVisibility(View.VISIBLE);//added by ycf on 20150806 end
-				}else {
+				} else {
 					//modify by ycf on 20150725 begin
 					//開尾箱連線失敗顯示
 //					Utils.showDialog("Error", ErrUtils.getTrunk( (String)msg.obj ), R.drawable.icon_error, mContext, null);
@@ -285,21 +280,40 @@ public class CtrlTs001Fragment extends Fragment
 				MediaUtil.onAction(Command.CMD_UNBIND, mContext );
 				mContext.setIndex(0);
 				
-				//取消定时推送
-//				PollingUtils.stopPollingService(mContext, PollingService.class);//added by ycf on 20150629
-				
 				//3. 用戶租車每兩小時跳出提示 (Local notification)
 				Utils.cancelNoticeTimer();//added by ycf on 20150716
 				
 				
 				return;
-			}else if( msg.arg1 == -1 ){
-				Utils.showDialog("Error", (String)msg.obj, R.drawable.icon_error, mContext, null);
+			}else if( msg.arg1 == -1 ){//added by ycf on 20150725 begin //還車連線失敗顯示
+				ToastUtil.makeText(mContext, getResources().getString(R.string.text_ctrl_scootaway_fail), Toast.LENGTH_SHORT);
 			}else if( msg.arg1 == -2 ){
-				Utils.showDialog("Error", getResources().getString( (int)msg.obj ), R.drawable.icon_error, mContext, null);
+				supportRtnLayout.setVisibility(View.VISIBLE);
+//				Utils.showDialog("Error", getResources().getString( (int)msg.obj ), R.drawable.icon_error, mContext, null);
 			}else if( msg.arg1 == -10 ){
 				String code = (String)msg.obj;
-				if( code.compareTo("1002") == 0 ){
+				
+				if( "1000".equals(code)){
+					ToastUtil.makeText(mContext, getResources().getString(R.string.result_title_suc), Toast.LENGTH_SHORT);
+				}else if("1107".equals(code)){
+					rfTitleTv.setText(getResources().getString(R.string.title_return_fail_1));
+					rfMsgTv.setText(getResources().getString(R.string.msg_return_fail_1));
+					rtnFailLayout.setVisibility(View.VISIBLE);
+				}else if(code != null && 1000 < Integer.parseInt(code) && Integer.parseInt(code) < 1007){
+					rfTitleTv.setText(getResources().getString(R.string.title_return_fail_2));
+					rfMsgTv.setText(getResources().getString(R.string.msg_return_fail_2));
+					rtnFailLayout.setVisibility(View.VISIBLE);
+				}else if("1201".equals(code)){//added by ycf on 20150806 begin
+					payFailMsgTv.setText(getResources().getString(R.string.text_payment_fail));
+					payFailTitleTipTv.setText(getResources().getString(R.string.title_payment_fail_2));
+					alphaRl.setVisibility(View.VISIBLE);
+					paymentFailRl.setVisibility(View.VISIBLE);
+				}else if("1105".equals(code)){
+					payFailMsgTv.setText(getResources().getString(R.string.text_payment_fail_3));
+					payFailTitleTipTv.setText(getResources().getString(R.string.title_payment_fail_3));
+					alphaRl.setVisibility(View.VISIBLE);
+					paymentFailRl.setVisibility(View.VISIBLE);
+				}else if( code.compareTo("1002") == 0 ){//added by ycf on 20150806 end
 					Utils.login(mContext);
 				} else {
 					Utils.showDialog("Error", ErrUtils.getReturn( (String)msg.obj ), R.drawable.icon_error, mContext, null);
@@ -307,6 +321,10 @@ public class CtrlTs001Fragment extends Fragment
 			}else{
 				StatusUtils.setDelay(0);
 				Utils.showDialog(R.string.error, R.string.exception_unknown, R.drawable.icon_error, mContext, null);
+			}
+			
+			if( "1000".equals((String)msg.obj)){
+				ToastUtil.makeText(mContext, getResources().getString(R.string.result_title_suc), Toast.LENGTH_SHORT);
 			}
 			List<BasicNameValuePair> params = new LinkedList<BasicNameValuePair>();  
 			params.add(new BasicNameValuePair("key", SpUtil.getInstance().getSTKey())); 
@@ -356,7 +374,7 @@ public class CtrlTs001Fragment extends Fragment
 					List<BasicNameValuePair> params = new LinkedList<BasicNameValuePair>();  
 					params.add(new BasicNameValuePair("key", SpUtil.getInstance().getSTKey())); 
 					params.add(new BasicNameValuePair("command", "return" ));  
-//					params.add(new BasicNameValuePair("parking_station_id", id ));  //modify by ycf on 20150811 
+					params.add(new BasicNameValuePair("parking_station_id", id ));  
 					params.add(new BasicNameValuePair("scooter_id", mSp.getTid() )); 
 					
 					mApp.getCmd().sendHttpsGet( Utils.urlScooter, params, mContext, mUnBind, Command.MODE_SILENT);
@@ -499,12 +517,19 @@ public class CtrlTs001Fragment extends Fragment
 	
 								//1. 還車時，停車場位置應用車子位置查詢，而不是用戶手機位置。
 								//add by ycf on 20150626 begin
-								params.add(new BasicNameValuePair("query", "rental" ));  
-								returnLayout.setVisibility(View.GONE);
-								mApp.getCmd().sendHttpsGet(Utils.urlUser, params, mApp, mLocation, Command.MODE_TOAST);
-								params.clear();
-								//add by ycf on 20150626 end
-
+//								params.add(new BasicNameValuePair("query", "rental" ));  
+//								returnLayout.setVisibility(View.GONE);
+//								mApp.getCmd().sendHttpsGet(Utils.urlUser, params, mApp, mLocation, Command.MODE_TOAST);
+//								params.clear();
+//								//add by ycf on 20150626 end
+								
+								//modify by ycf on 20150812 begin
+								//还车无需传停车场ID
+								params.add(new BasicNameValuePair("key", SpUtil.getInstance().getSTKey())); 
+								params.add(new BasicNameValuePair("command", "return" ));  
+								params.add(new BasicNameValuePair("scooter_id", mSp.getTid() )); 
+								mApp.getCmd().sendHttpsGet( Utils.urlScooter, params, mContext, mUnBind, Command.MODE_SILENT);
+								//add by ycf on 20150812 end
 							}
 						})
 				.setNegativeButton(
