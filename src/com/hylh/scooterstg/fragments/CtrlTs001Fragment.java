@@ -323,7 +323,7 @@ public class CtrlTs001Fragment extends Fragment
 				Utils.showDialog(R.string.error, R.string.exception_unknown, R.drawable.icon_error, mContext, null);
 			}
 			
-			if( "1000".equals((String)msg.obj)){
+			if(msg.obj != null && "1000".equals((String)msg.obj)){
 				ToastUtil.makeText(mContext, getResources().getString(R.string.result_title_suc), Toast.LENGTH_SHORT);
 			}
 			List<BasicNameValuePair> params = new LinkedList<BasicNameValuePair>();  

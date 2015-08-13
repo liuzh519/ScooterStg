@@ -7,6 +7,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -141,7 +142,16 @@ public class MainActivity extends FragmentActivity {
 		// ���ViewPager�����������
 		MyAdapter mPagerAdapter = new MyAdapter( mActivity.getSupportFragmentManager());
 		mTabPager.setAdapter(mPagerAdapter);
-		mFag1.onResume();
+		
+		//added by ycf on 20150813 begin
+		Intent intent = this.getIntent();
+		String frmName = intent.getStringExtra("show");
+		if(frmName != null && "mFag2".equals(frmName)){
+			mFag2.onResume();
+		}else{
+			mFag1.onResume();
+		}//added by ycf on 20150813 end
+
 	}
 	
 	public void setIndex(int i){

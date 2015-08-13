@@ -12,6 +12,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
@@ -93,23 +94,19 @@ public class BindConfirmActivity extends FragmentActivity {
 				//3. 用戶租車每兩小時跳出提示 (Local notification)
 				//added by ycf on 20150716 begin
 //				showDialog(getResources().getString( R.string.result_title_suc), getResources().getString( R.string.result_success), R.drawable.icon_error);
-				Utils.getNoticeTimer().schedule(new TimerTask(){
+				
+				new Thread(new Runnable() {
 					@Override
 					public void run() {
-						 new Handler(){
-							    public void handleMessage(Message msg) {
-							    	showDialog(getResources().getString( R.string.result_title_suc), getResources().getString( R.string.result_success), R.drawable.icon_error);
-							    	super.handleMessage(msg);
-							    }
-							}.sendMessage(new Message());
-						
-					}}, 0, Utils.NOTIFY_INTERVAL_TIME);
+				 Looper.prepare();
+				 startTimer();
+				 Looper.loop(); 
+					}
+				}).start();
 				//added by ycf on 20150716 end
 				
 				//启动定时通知
 //				PollingUtils.startPollingService(mContext, currentTime, 2 * 60 * 60 , PollingService.class);//added by ycf on 20150629
-			
-				
 				rentSuc.setVisibility(View.VISIBLE);//added by ycf on 20150724
 				
 			}else if( msg.arg1 == -1 ){
@@ -144,8 +141,35 @@ public class BindConfirmActivity extends FragmentActivity {
 			}
 
 			Utils.dismissProcess();
+			
 		}
 	};
+	
+	//added by ycf on 20150813 begin
+	private void startTimer(){
+		
+		Handler timerHandler = new Handler(){
+			public void handleMessage(Message msg) {
+				Looper.prepare();
+				Utils.getNoticeTimer().schedule(new TimerTask() {
+					@Override
+					public void run() {
+						new Handler() {
+							public void handleMessage(Message msg) {
+								showDialog(getResources().getString(R.string.result_title_suc),
+										getResources().getString(R.string.result_success),R.drawable.icon_error);
+								super.handleMessage(msg);
+							}
+						}.sendMessage(new Message());
+
+					}
+				}, 0, Utils.NOTIFY_INTERVAL_TIME);
+				Looper.loop();
+				
+			};
+		};
+	}
+	//added by ycf on 20150813 end
 	
 	
 	public void showDialog(String title, String txt, int icon){
@@ -307,6 +331,9 @@ public class BindConfirmActivity extends FragmentActivity {
 			@Override
 			public void onClick(View v) {
 				rentSuc.setVisibility(View.GONE);
+				Intent intent = new Intent (mContext, MainActivity.class);
+				intent.putExtra("show", "mFag2");
+	  		    startActivity(intent);
 			}
 		});
 	    failBtn.setOnClickListener(new OnClickListener() {
