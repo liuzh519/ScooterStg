@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.hylh.scooterstg"
+    android:versionCode="124"
+    android:versionName="1.24" >
+
+    <uses-sdk
+        android:minSdkVersion="9"
+        android:targetSdkVersion="19" />
+    
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_GPS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-feature android:name="android.hardware.location.gps" />
+    <uses-permission android:name="android.permission.READ_LOGS" >
+    </uses-permission>
+
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.bluetooth.device.action.PAIRING_REQUEST" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" >
+    </uses-permission>
+
+    <permission
+        android:name="com.hylh.scooterstg.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.hylh.scooterstg.permission.MAPS_RECEIVE" />
+    
+    
+    <uses-permission android:name="android.permission.BAIDU_LOCATION_SERVICE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" >
+    </uses-permission>
+	<uses-permission android:name="android.permission.CALL_PHONE"></uses-permission>  
+	
+    <application
+        android:name="com.hylh.scooterstg.utils.MyApplication"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name" android:theme="@android:style/Theme.Light.NoTitleBar">
+        
+ 		<uses-library android:name="com.google.android.maps" android:required="false" />
+         <receiver
+            android:name="com.hylh.scooterstg.utils.MyBroadcastReceiver"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="android.bluetooth.device.action.PAIRING_REQUEST" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="hylh.scootert.alarm.action" />
+            </intent-filter>
+        </receiver>
+
+		<service 
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote"
+            android:exported="false">
+            <intent-filter >
+                <action android:name="com.baidu.location.service"
+                    android:exported="false"/>
+            </intent-filter>
+        </service>
+        
+        <service
+            android:name="com.hylh.scooterstg.utils.MyService"
+            android:enabled="true" />
+        
+        <!-- added by ycf on 20150629 begin -->
+              <service
+            android:name="com.hylh.scooterstg.service.PollingService"
+            android:enabled="true" />
+          <!-- added by ycf on 20150629 end -->
+          
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="HHGoTzdLjzcdhHqzakiZGXiR" />
+        <!-- meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyB7VO30-HeR_P7mRRcCm3iOGzpdkL4nUR8" / -->
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyBgW1VMivxZf3v255LDtnA5CrDDNhyuCSk" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+           android:value="@integer/google_play_services_version" />
+        
+        <activity
+            android:name="com.hylh.scooterstg.activity.Welcome"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:label="@string/app_name"
+            android:name="com.hylh.scooterstg.activity.LoginActivity" 
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity android:label="@string/app_name" 
+            android:name="com.hylh.scooterstg.activity.AboutActivity" 
+            android:screenOrientation="portrait" />
+        <activity
+            android:label="@string/app_name"
+            android:name="com.hylh.scooterstg.activity.BindActivity" 
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:label="@string/app_name"
+            android:name="com.hylh.scooterstg.activity.BindConfirmActivity" 
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        <activity android:label="@string/app_name" 
+            android:name="com.hylh.scooterstg.activity.OrientationActivity"
+            android:screenOrientation="portrait"  />
+        
+        <activity android:label="@string/app_name" 
+            android:name="com.hylh.scooterstg.activity.WebkitActivity"
+            android:screenOrientation="portrait"  />
+        
+        
+        <activity android:label="@string/app_name" 
+            android:name="com.hylh.scooterstg.activity.SysSettingAcitivity" 
+            android:screenOrientation="portrait" />
+        <activity android:label="@string/app_name" 
+            android:name="com.hylh.scooterstg.activity.SettingItemAcitivity" 
+            android:screenOrientation="portrait" />
+        
+        <activity android:label="@string/app_name" 
+            android:name="com.hylh.scooterstg.activity.UserPasswdAcitivity" 
+            android:screenOrientation="portrait" />
+        <activity android:label="@string/app_name" 
+            android:name="com.hylh.scooterstg.activity.UserInfoAcitivity" 
+            android:screenOrientation="portrait" />
+        <activity android:label="@string/app_name" 
+            android:name="com.hylh.scooterstg.activity.UserSettingAcitivity" 
+            android:screenOrientation="portrait" />
+        
+        <activity android:label="@string/app_name" 
+            android:name="com.hylh.scooterstg.activity.DevSetListAcitivity" 
+            android:screenOrientation="portrait" />
+        <activity android:label="@string/app_name" 
+            android:name="com.hylh.scooterstg.td001.DevSetTd001Acitivity" 
+            android:screenOrientation="portrait" />
+        
+        <activity android:label="@string/app_name" 
+            android:name="com.hylh.scooterstg.activity.ReportListAcitivity" 
+            android:screenOrientation="portrait" />
+        <activity android:label="@string/app_name" 
+            android:name="com.hylh.scooterstg.activity.ReportItemAcitivity"
+            android:screenOrientation="portrait"  />
+        <activity android:label="@string/app_name" 
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" 
+            android:name="com.hylh.scooterstg.activity.GetRptQueryActivity" 
+            android:screenOrientation="portrait" />
+        <activity android:label="@string/app_name" 
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" 
+            android:name="com.hylh.scooterstg.activity.GetDateTimeActivity" 
+            android:screenOrientation="portrait" />
+        
+        <activity android:label="@string/app_name" 
+            android:name="com.hylh.scooterstg.activity.LoginPatternActivity" 
+            android:screenOrientation="portrait" />
+        <activity android:label="@string/app_name" 
+            android:name="com.hylh.scooterstg.activity.LoginSuccessActivity" 
+            android:screenOrientation="portrait" />
+        <activity android:label="@string/app_name" 
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" 
+            android:name="com.hylh.scooterstg.activity.LoginLocTopMenuActivity"
+            android:screenOrientation="portrait"  />
+        <activity
+            android:label="@string/app_name"
+            android:name="com.hylh.scooterstg.activity.RegisterUserActivity"
+            android:screenOrientation="portrait"  >
+        </activity>
+        <activity
+            android:label="@string/app_name"
+            android:name="com.hylh.scooterstg.activity.RegisterDeviceActivity" 
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        <activity
+            android:label="@string/app_name"
+            android:name="com.hylh.scooterstg.activity.MainActivity" 
+            android:screenOrientation="portrait" >
+        </activity>
+    </application>
+
+</manifest>

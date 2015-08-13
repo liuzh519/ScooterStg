@@ -1,0 +1,1070 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<item id="313098" trcd="" desc="">
+		<request>
+		</request>
+	</item>
+	
+	<!-- 权限  -->
+	<item id="80010002" trcd="" desc="查询权限">
+		<request>
+		</request>
+	</item>
+
+	<!-- 账户控制 -->
+	<item id="10001001" trcd="" desc="用户登陆">
+		<request>
+		</request>
+	</item>
+	<item id="100022" trcd="" desc="修改密码">
+		<request>
+		</request>
+	</item>
+	<item id="100023" trcd="" desc="修改用户信息">
+		<request>
+		</request>
+	</item>
+
+	<!-- 查询 -->
+	<item id="201013" trcd="" desc="查询车辆信息">
+		<request>
+		</request>
+	</item>
+	<item id="20101301" trcd="" desc="添加查询车辆">
+		<request>
+		</request>
+	</item>
+	<item id="20101302" trcd="" desc="删除查询车辆">
+		<request>
+		</request>
+	</item>
+	<item id="20101303" trcd="" desc="清除查询车辆">
+		<request>
+		</request>
+	</item>
+	
+	<!-- 搜索 -->
+	<item id="201050" trcd="" desc="查询附近车辆列表">
+		<request>
+		</request>
+	</item>
+	<item id="201051" trcd="" desc="已选择车辆信息">
+		<request>
+		</request>
+	</item>
+	<!-- 邦定 -->
+	<item id="100050" trcd="" desc="邦定车辆">
+		<request>
+		</request>
+	</item>
+	<item id="100051" trcd="" desc="解除邦定车辆">
+		<request>
+		</request>
+	</item>
+	
+	<!-- 报表-->
+	<item id="900002" trcd="" desc="用户登陆日志">
+		<request>
+		</request>
+	</item>
+	<item id="900003" trcd="" desc="用户登陆日志">
+		<request>
+		</request>
+	</item>
+	<item id="900010" trcd="" desc="操作">
+		<request>
+		</request>
+	</item>
+	<item id="900110" trcd="" desc="查询车辆历史轨迹">
+		<request>
+		</request>
+	</item>
+
+	<!-- td001 -->
+	<item id="303807" trcd="S07" desc="备用IP,端口">
+		<request>
+			<choose test="operator">
+				<case value="1" desc="">
+					<field id="operator"/>
+					<field id="ip"/>
+					<field id="port"/>
+					<field id="enabled"/>
+				</case>
+				<case value="0" desc="">
+					<field id="operator"/>
+				</case>
+			</choose>
+		</request>
+		<response>
+			<field id="ip"/>
+			<field id="port"/>
+			<field id="enabled"/>
+		</response>
+	</item>
+	<item id="303809" trcd="S09" desc="里程同步">
+		<request>
+			<choose test="operator">
+				<case value="1" desc="">
+					<field id="operator"/>
+					<field id="mileage"/>
+				</case>
+				<case value="0" desc="">
+					<field id="operator"/>
+				</case>
+			</choose>
+		</request>
+		<response>
+			<field id="mileage"/>
+		</response>
+	</item>
+	<item id="303847" trcd="S47" desc="自动接听来电">
+		<request>
+			<choose test="operator">
+				<case value="1" desc="">
+					<field id="operator"/>
+					<field id="enabled"/>
+				</case>
+				<case value="0" desc="">
+					<field id="operator"/>
+				</case>
+			</choose>
+		</request>
+		<response>
+			<field id="enabled"/>
+		</response>
+	</item>
+	<item id="303840" trcd="S40" desc="设置停车报告">
+		<request>
+			<choose test="operator">
+				<case value="1" desc="">
+					<field id="operator"/>
+					<field id="enabled"/>
+					<field id="interval"/>
+				</case>
+				<case value="0" desc="">
+					<field id="operator"/>
+				</case>
+			</choose>
+		</request>
+		<response>
+			<field id="enabled"/>
+			<field id="interval"/>
+		</response>
+	</item>
+	<item id="303832" trcd="S32" desc="S32 设置省电模式">
+		<request>
+			<choose test="operator">
+				<case value="1" desc="">
+					<field id="operator"/>
+					<field id="eanbled"/>
+					<field id="count"/>
+					<field id="interval"/>
+				</case>
+				<case value="0" desc="">
+					<field id="operator"/>
+				</case>
+			</choose>
+		</request>
+		<response>
+			<field id="eanbled"/>
+			<field id="count"/>
+			<field id="interval"/>
+		</response>
+	</item>
+	<item id="303835" trcd="S35" desc="设置历史数据的存储间隔">
+		<request>
+			<choose test="operator">
+				<case value="1" desc="">
+					<field id="operator"/>
+					<field id="interval"/>
+				</case>
+				<case value="0" desc="">
+					<field id="operator"/>
+				</case>
+			</choose>
+		</request>
+		<response>
+			<field id="interval"/>
+		</response>
+	</item>
+	<item id="303849" trcd="S49" desc="S49 最长通话时间">
+		<request>
+			<choose test="operator">
+				<case value="1" desc="">
+					<field id="operator"/>
+					<field id="max"/>
+				</case>
+				<case value="0" desc="">
+					<field id="operator"/>
+				</case>
+			</choose>
+		</request>
+		<response>
+			<field id="max"/>
+		</response>
+	</item>
+	<item id="303824" trcd="S24" desc="设置APN的用户名与密码  ">
+		<request>
+			<choose test="operator">
+				<case value="1" desc="">
+					<field id="operator"/>
+					<field id="name"/>
+					<field id="passwd"/>
+				</case>
+				<case value="0" desc="">
+					<field id="operator"/>
+				</case>
+			</choose>
+		</request>
+		<response>
+			<field id="name"/>
+			<field id="passwd"/>
+		</response>
+	</item>
+	<item id="303858" trcd="S58" desc="设置控制输出2时间">
+		<request>
+			<choose test="operator">
+				<case value="1" desc="">
+					<field id="operator"/>
+					<field id="delay"/>
+				</case>
+				<case value="0" desc="">
+					<field id="operator"/>
+				</case>
+			</choose>
+		</request>
+		<response>
+			<field id="delay"/>
+		</response>
+	</item>
+	<item id="303823" trcd="S23" desc="查询SIM卡的CCID号">
+		<request>
+		</request>
+		<response>
+			<field id="ccid"/>
+		</response>
+	</item>
+	<item id="303856" trcd="S56" desc="设置车型">
+		<request>
+			<choose test="operator">
+				<case value="1" desc="">
+					<field id="operator"/>
+					<field id="vecl"/>
+				</case>
+				<case value="0" desc="">
+					<field id="operator"/>
+				</case>
+			</choose>
+		</request>
+		<response>
+			<field id="vecl"/>
+		</response>
+	</item>
+	<item id="303818" trcd="S18" desc="GPS星历数据 ">
+		<request>
+			<choose test="operator">
+				<case value="1" desc="">
+					<field id="operator"/>
+					<field id="interval"/>
+				</case>
+				<case value="0" desc="">
+					<field id="operator"/>
+				</case>
+			</choose>
+		</request>
+		<response>
+			<field id="interval"/>
+		</response>
+	</item>
+	<item id="303816" trcd="S16" desc="设置安装人员信息">
+		<request>
+			<choose test="operator">
+				<case value="1" desc="">
+					<field id="operator"/>
+					<field id="info"/>
+					<field id="index"/>
+				</case>
+				<case value="0" desc="">
+					<field id="operator"/>
+				</case>
+			</choose>
+		</request>
+		<response>
+			<field id="info"/>
+			<field id="index"/>
+		</response>
+	</item>
+	<item id="303811" trcd="S11" desc="防爆功能">
+		<request>
+			<choose test="operator">
+				<case value="1" desc="">
+					<field id="operator"/>
+					<field id="enabled"/>
+				</case>
+				<case value="0" desc="">
+					<field id="operator"/>
+				</case>
+			</choose>
+		</request>
+		<response>
+			<field id="enabled"/>
+		</response>
+	</item>
+	<item id="303834" trcd="S34" desc="查询日里程记录">
+		<request>
+		</request>
+		<response>
+			<field id="date"/>
+			<field id="mileage"/>
+			<field id="count"/>
+		</response>
+	</item>
+	<item id="303848" trcd="S48" desc="手机查询当前车辆位置">
+		<request>
+		</request>
+		<response>
+		</response>
+	</item>
+	<item id="303833" trcd="S33" desc="历史数据实时上传">
+		<request>
+			<choose test="operator">
+				<case value="1" desc="">
+					<field id="operator"/>
+					<field id="eanbled"/>
+				</case>
+				<case value="0" desc="">
+					<field id="operator"/>
+				</case>
+			</choose>
+		</request>
+		<response>
+			<field id="eanbled"/>
+		</response>
+	</item>
+	<item id="303841" trcd="S41" desc="震动检测">
+		<request>
+			<choose test="operator">
+				<case value="1" desc="">
+					<field id="operator"/>
+					<field id="enabled"/>
+				</case>
+				<case value="0" desc="">
+					<field id="operator"/>
+				</case>
+			</choose>
+		</request>
+		<response>
+			<field id="enabled"/>
+		</response>
+	</item>
+	<item id="303846" trcd="S46" desc="从连接(UDP)的IP地址及端口号">
+		<request>
+			<choose test="operator">
+				<case value="1" desc="">
+					<field id="operator"/>
+					<field id="uri"/>
+					<field id="port"/>
+					<field id="type"/>
+				</case>
+				<case value="0" desc="">
+					<field id="operator"/>
+				</case>
+			</choose>
+		</request>
+		<response>
+			<field id="uri"/>
+			<field id="port"/>
+			<field id="type"/>
+		</response>
+	</item>
+	<item id="303808" trcd="S08" desc="FTP的升级参数">
+		<request>
+			<choose test="operator">
+				<case value="1" desc="">
+					<field id="operator"/>
+					<field id="ip"/>
+					<field id="port"/>
+					<field id="usr"/>
+					<field id="pwd"/>
+					<field id="path"/>
+					<field id="file"/>
+				</case>
+				<case value="0" desc="">
+					<field id="operator"/>
+				</case>
+			</choose>
+		</request>
+		<response>
+			<field id="ip"/>
+			<field id="port"/>
+			<field id="usr"/>
+			<field id="pwd"/>
+			<field id="path"/>
+			<field id="file"/>
+		</response>
+	</item>
+	<item id="303806" trcd="S06" desc="设置速比">
+		<request>
+			<choose test="operator">
+				<case value="1" desc="">
+					<field id="operator"/>
+					<field id="value"/>
+				</case>
+				<case value="0" desc="">
+					<field id="operator"/>
+				</case>
+			</choose>
+		</request>
+		<response>
+			<field id="value"/>
+		</response>
+	</item>
+	<item id="303801" trcd="S01" desc="查询终端制造商">
+		<request>
+		</request>
+		<response>
+			<field id="info"/>
+		</response>
+	</item>
+	<item id="303810" trcd="S10" desc="信号监测">
+		<request>
+			<choose test="operator">
+				<case value="1" desc="">
+					<field id="operator"/>
+					<field id="signal_id"/>
+					<field id="type"/>
+				</case>
+				<case value="0" desc="">
+					<field id="operator"/>
+				</case>
+			</choose>
+		</request>
+		<response>
+			<field id="signal_id"/>
+			<field id="type"/>
+		</response>
+	</item>
+	<item id="303817" trcd="S17" desc="运行段报告的报告间隔 ">
+		<request>
+			<choose test="operator">
+				<case value="1" desc="">
+					<field id="operator"/>
+					<field id="interval"/>
+				</case>
+				<case value="0" desc="">
+					<field id="operator"/>
+				</case>
+			</choose>
+		</request>
+		<response>
+			<field id="interval"/>
+		</response>
+	</item>
+	<item id="303857" trcd="S57" desc="设置控制输出1时间">
+		<request>
+			<choose test="operator">
+				<case value="1" desc="">
+					<field id="operator"/>
+					<field id="delay"/>
+				</case>
+				<case value="0" desc="">
+					<field id="operator"/>
+				</case>
+			</choose>
+		</request>
+		<response>
+			<field id="delay"/>
+		</response>
+	</item>
+	<item id="303850" trcd="S50" desc="请求单次的短信回传GPS信息">
+		<request>
+		</request>
+		<response>
+		</response>
+	</item>
+	<item id="303822" trcd="S22" desc="GSM网络信号上传  ">
+		<request>
+			<choose test="operator">
+				<case value="1" desc="">
+					<field id="operator"/>
+					<field id="interval"/>
+				</case>
+				<case value="0" desc="">
+					<field id="operator"/>
+				</case>
+			</choose>
+		</request>
+		<response>
+			<field id="interval"/>
+		</response>
+	</item>
+	<item id="303825" trcd="S25" desc="查询历史轨迹数据  ">
+		<request>
+			<field id="count"/>
+		</request>
+		<response>
+			<field id="count"/>
+		</response>
+	</item>
+	<item id="303859" trcd="S59" desc="FTP升级指令">
+		<request>
+			<field id="mode"/>
+			<field id="crc"/>
+		</request>
+		<response>
+		</response>
+	</item>
+	<item id="303814" trcd="S14" desc=" 获取软件版本">
+		<request>
+		</request>
+		<response>
+			<field id="term_ver"/>
+		</response>
+	</item>
+	<item id="303853" trcd="S53" desc="设置蓝牙加密KEY">
+		<request>
+			<choose test="operator">
+				<case value="1" desc="">
+					<field id="operator"/>
+					<field id="btkey"/>
+				</case>
+				<case value="0" desc="">
+					<field id="operator"/>
+					<field id="flag"/>
+					<field id="phone"/>
+					<field id="btkey"/>
+				</case>
+			</choose>
+		</request>
+		<response>
+			<field id="btkey"/>
+		</response>
+	</item>
+	<item id="303828" trcd="S28" desc="S28 单次点名">
+		<request>
+		</request>
+		<response>
+		</response>
+	</item>
+	<item id="303854" trcd="S54" desc="设置自动熄火时间">
+		<request>
+			<choose test="operator">
+				<case value="1" desc="">
+					<field id="operator"/>
+					<field id="delay"/>
+				</case>
+				<case value="0" desc="">
+					<field id="operator"/>
+				</case>
+			</choose>
+		</request>
+		<response>
+			<field id="delay"/>
+		</response>
+	</item>
+	<item id="303826" trcd="S26" desc="设置摄像头分辨率大小">
+		<request>
+			<choose test="operator">
+				<case value="1" desc="">
+					<field id="operator"/>
+					<field id="size"/>
+				</case>
+				<case value="0" desc="">
+					<field id="operator"/>
+				</case>
+			</choose>
+		</request>
+		<response>
+			<field id="size"/>
+		</response>
+	</item>
+	<item id="303821" trcd="S21" desc="扫描枪打包上传参数 ">
+		<request>
+			<choose test="operator">
+				<case value="1" desc="">
+					<field id="operator"/>
+					<field id="interval"/>
+					<field id="count"/>
+				</case>
+				<case value="0" desc="">
+					<field id="operator"/>
+				</case>
+			</choose>
+		</request>
+		<response>
+			<field id="interval"/>
+			<field id="count"/>
+		</response>
+	</item>
+	<item id="303830" trcd="S30" desc="S30 运行段报告">
+		<request>
+			<choose test="operator">
+				<case value="1" desc="">
+					<field id="operator"/>
+					<field id="eanbled"/>
+				</case>
+				<case value="0" desc="">
+					<field id="operator"/>
+				</case>
+			</choose>
+		</request>
+		<response>
+			<field id="eanbled"/>
+		</response>
+	</item>
+	<item id="303837" trcd="S37" desc="S37 GPRS/SMS通道互换">
+		<request>
+			<choose test="operator">
+				<case value="1" desc="">
+					<field id="operator"/>
+					<field id="eanbled"/>
+					<field id="start"/>
+					<field id="interval"/>
+				</case>
+				<case value="0" desc="">
+					<field id="operator"/>
+				</case>
+			</choose>
+		</request>
+		<response>
+			<field id="eanbled"/>
+			<field id="start"/>
+			<field id="interval"/>
+		</response>
+	</item>
+	<item id="303842" trcd="S42" desc="芯片温度检测">
+		<request>
+			<choose test="operator">
+				<case value="1" desc="">
+					<field id="operator"/>
+					<field id="enabled"/>
+					<field id="interval"/>
+				</case>
+				<case value="0" desc="">
+					<field id="operator"/>
+				</case>
+			</choose>
+		</request>
+		<response>
+			<field id="enabled"/>
+			<field id="interval"/>
+		</response>
+	</item>
+	<item id="303802" trcd="S02" desc="设置IP地址,端口,APN">
+		<request>
+			<choose test="operator">
+				<case value="1" desc="">
+					<field id="operator"/>
+					<field id="uri"/>
+					<field id="port"/>
+					<field id="apn"/>
+					<field id="mode"/>
+				</case>
+				<case value="0" desc="">
+					<field id="operator"/>
+				</case>
+			</choose>
+		</request>
+		<response>
+			<field id="uri" split=":"/>
+			<field id="port"/>
+			<field id="apn"/>
+			<field id="mode"/>
+		</response>
+	</item>
+	<item id="303805" trcd="S05" desc="车主的手机号">
+		<request>
+			<choose test="operator">
+				<case value="1" desc="">
+					<field id="operator"/>
+					<field id="index"/>
+					<field id="vecl_phone"/>
+				</case>
+				<case value="0" desc="">
+					<field id="operator"/>
+					<field id="index"/>
+				</case>
+			</choose>
+		</request>
+		<response>
+			<field id="index"/>
+			<field id="vecl_phone"/>
+		</response>
+	</item>
+	<item id="303820" trcd="S20" desc="设置外设端口波特率 ">
+		<request>
+			<choose test="operator">
+				<case value="1" desc="">
+					<field id="operator"/>
+					<field id="port"/>
+					<field id="baudrate"/>
+				</case>
+				<case value="0" desc="">
+					<field id="operator"/>
+				</case>
+			</choose>
+		</request>
+		<response>
+			<field id="port"/>
+			<field id="baudrate"/>
+		</response>
+	</item>
+	<item id="303827" trcd="S27" desc="设置与标准时的时差">
+		<request>
+			<choose test="operator">
+				<case value="1" desc="">
+					<field id="operator"/>
+					<field id="offset"/>
+				</case>
+				<case value="0" desc="">
+					<field id="operator"/>
+				</case>
+			</choose>
+		</request>
+		<response>
+			<field id="offset"/>
+		</response>
+	</item>
+	<item id="303829" trcd="S29" desc="是否启用日里程">
+		<request>
+			<choose test="operator">
+				<case value="1" desc="">
+					<field id="operator"/>
+					<field id="eanbled"/>
+				</case>
+				<case value="0" desc="">
+					<field id="operator"/>
+				</case>
+			</choose>
+		</request>
+		<response>
+			<field id="eanbled"/>
+		</response>
+	</item>
+	<item id="303855" trcd="S55" desc="设置点火时间">
+		<request>
+			<choose test="operator">
+				<case value="1" desc="">
+					<field id="operator"/>
+					<field id="delay"/>
+				</case>
+				<case value="0" desc="">
+					<field id="operator"/>
+				</case>
+			</choose>
+		</request>
+		<response>
+			<field id="delay"/>
+		</response>
+	</item>
+	<item id="303812" trcd="S12" desc="短信控制设置">
+		<request>
+			<choose test="operator">
+				<case value="1" desc="">
+					<field id="operator"/>
+					<field id="mode"/>
+				</case>
+				<case value="0" desc="">
+					<field id="operator"/>
+				</case>
+			</choose>
+		</request>
+		<response>
+			<field id="mode"/>
+		</response>
+	</item>
+	<item id="303815" trcd="S15" desc="数据传输模式">
+		<request>
+			<choose test="operator">
+				<case value="1" desc="">
+					<field id="operator"/>
+					<field id="mode"/>
+				</case>
+				<case value="0" desc="">
+					<field id="operator"/>
+				</case>
+			</choose>
+		</request>
+		<response>
+			<field id="mode"/>
+		</response>
+	</item>
+	<item id="303804" trcd="S04" desc="S04 设置运营商的短信息中心号码">
+		<request>
+			<choose test="operator">
+				<case value="1" desc="">
+					<field id="operator"/>
+					<field id="interval"/>
+					<field id="count"/>
+					<field id="type"/>
+					<field id="ret_type"/>
+					<field id="pack"/>
+				</case>
+				<case value="0" desc="">
+					<field id="operator"/>
+				</case>
+			</choose>
+		</request>
+		<response>
+			<field id="interval"/>
+			<field id="count"/>
+			<field id="type"/>
+			<field id="return"/>
+			<field id="pack"/>
+		</response>
+	</item>
+	<item id="303803" trcd="S03" desc="设置运营商的短信息中心号码">
+		<request>
+			<choose test="operator">
+				<case value="1" desc="">
+					<field id="operator"/>
+					<field id="center_number"/>
+				</case>
+				<case value="0" desc="">
+					<field id="operator"/>
+				</case>
+			</choose>
+		</request>
+		<response>
+			<field id="center_number"/>
+		</response>
+	</item>
+	<item id="303843" trcd="S43" desc="智能上传时间管理">
+		<request>
+			<choose test="operator">
+				<case value="1" desc="">
+					<field id="operator"/>
+					<field id="type"/>
+					<field id="enabled"/>
+					<field id="param"/>
+				</case>
+				<case value="0" desc="">
+					<field id="operator"/>
+				</case>
+			</choose>
+		</request>
+		<response>
+			<field id="type"/>
+			<field id="enabled"/>
+			<field id="param"/>
+		</response>
+	</item>
+	<item id="303838" trcd="S38" desc="设置IO口复用">
+		<request>
+			<choose test="operator">
+				<case value="1" desc="">
+					<field id="operator"/>
+					<field id="signal"/>
+					<field id="signalid"/>
+				</case>
+				<case value="0" desc="">
+					<field id="operator"/>
+				</case>
+			</choose>
+		</request>
+		<response>
+			<field id="signal"/>
+			<field id="signalid"/>
+		</response>
+	</item>
+	<item id="303836" trcd="S36" desc="查询运行段记录">
+		<request>
+			<field id="index"/>
+		</request>
+		<response>
+			<field id="index"/>
+			<field id="bgdt"/>
+			<field id="blng"/>
+			<field id="blat"/>
+			<field id="eddt"/>
+			<field id="elng"/>
+			<field id="elat"/>
+			<field id="count"/>
+			<field id="ospd"/>
+		</response>
+	</item>
+	<item id="303001" trcd="C01" desc="冷启动指令">
+		<request>
+		</request>
+		<response>
+		</response>
+	</item>
+	<item id="303006" trcd="C06" desc="远程监听指令">
+		<request>
+			<field id="mobino"/>
+		</request>
+		<response>
+			<field id="mobino"/>
+		</response>
+	</item>
+	<item id="303097" trcd="C97" desc="寻车">
+		<request>
+		</request>
+		<response>
+		</response>
+	</item>
+	<item id="303090" trcd="C90" desc="控制输出2">
+		<request>
+		</request>
+		<response>
+		</response>
+	</item>
+	<item id="303099" trcd="C99" desc="配置防盗器">
+		<request>
+			<choose test="operator">
+				<case value="1" desc="">
+					<field id="operator"/>
+					<field id="guard"/>
+					<field id="silent"/>
+					<field id="robbery"/>
+					<field id="camera"/>
+					<field id="remote"/>
+					<field id="toplight"/>
+					<field id="start"/>
+					<field id="gps"/>
+					<field id="lowpower"/>
+					<field id="sms"/>
+					<field id="shake"/>
+					<field id="trunk"/>
+					<field id="blue"/>
+				</case>
+				<case value="0" desc="">
+					<field id="operator"/>
+				</case>
+			</choose>
+		</request>
+		<response>
+			<field id="guard"/>
+			<field id="silent"/>
+			<field id="robbery"/>
+			<field id="camera"/>
+			<field id="remote"/>
+			<field id="toplight"/>
+			<field id="start"/>
+			<field id="gps"/>
+			<field id="lowpower"/>
+			<field id="sms"/>
+			<field id="shake"/>
+			<field id="trunk"/>
+			<field id="blue"/>
+		</response>
+	</item>
+	<item id="303089" trcd="C89" desc="控制输出2">
+		<request>
+		</request>
+		<response>
+		</response>
+	</item>
+	<item id="303098" trcd="C98" desc="锁车/解锁车">
+		<request>
+			<choose test="operator">
+				<case value="1" desc="">
+					<field id="operator"/>
+					<field id="mode"/>
+				</case>
+				<case value="0" desc="">
+					<field id="operator"/>
+					<field id="mode"/>
+				</case>
+			</choose>
+		</request>
+		<response>
+			<field id="mode"/>
+		</response>
+	</item>
+	<item id="303091" trcd="C91" desc="解锁后自动加锁时间设置">
+		<request>
+			<choose test="operator">
+				<case value="1" desc="">
+					<field id="operator"/>
+					<field id="enable"/>
+					<field id="time"/>
+				</case>
+				<case value="0" desc="">
+					<field id="operator"/>
+				</case>
+			</choose>
+		</request>
+		<response>
+			<field id="enable"/>
+			<field id="time"/>
+		</response>
+	</item>
+	<item id="303096" trcd="C96" desc="一键启动">
+		<request>
+			<field id="mode"/>
+		</request>
+		<response>
+			<field id="mode"/>
+		</response>
+	</item>
+	<item id="303095" trcd="C95" desc="防抢车">
+		<request>
+			<choose test="operator">
+				<case value="1" desc="">
+					<field id="operator"/>
+					<field id="enable"/>
+				</case>
+				<case value="0" desc="">
+					<field id="operator"/>
+				</case>
+			</choose>
+		</request>
+		<response>
+			<field id="enable"/>
+		</response>
+	</item>
+	<item id="303092" trcd="C92" desc="记忆关门关尾箱信号状态">
+		<request>
+		</request>
+		<response>
+		</response>
+	</item>
+	<item id="303004" trcd="C04" desc="断油电指令">
+		<request>
+		</request>
+		<response>
+			<field id="mode"/>
+		</response>
+	</item>
+	<item id="303005" trcd="C05" desc="通油电指令">
+		<request>
+		</request>
+		<response>
+			<field id="mode"/>
+		</response>
+	</item>
+	<item id="303002" trcd="C02" desc="超速报警喇叭测试指令">
+		<request>
+		</request>
+		<response>
+		</response>
+	</item>
+	<item id="303093" trcd="C93" desc="开尾箱">
+		<request>
+		</request>
+		<response>
+		</response>
+	</item>
+	<item id="303094" trcd="C94" desc="拍照">
+		<request>
+			<choose test="operator">
+				<case value="1" desc="">
+					<field id="operator"/>
+					<field id="count"/>
+				</case>
+				<case value="0" desc="">
+					<field id="operator"/>
+					<field id="count"/>
+				</case>
+			</choose>
+		</request>
+		<response>
+			<field id="count"/>
+		</response>
+	</item>
+
+
+
+
+</root>
