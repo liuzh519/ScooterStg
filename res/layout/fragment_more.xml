@@ -455,6 +455,27 @@
 	                    android:scaleType="fitXY"
 	                    android:src="@drawable/qvip_pay_wallet_icon_arrow_right_normal" />
 	            </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/devide_line" />
+	            
+
+		    	<RelativeLayout
+		    	    android:layout_width="match_parent"
+		    	    android:layout_height="wrap_content"
+		    	    android:layout_centerHorizontal="true">
+		
+		    		<ImageView
+		    		    android:id="@+id/imageView3"
+		    		    android:layout_width="wrap_content"
+		    		    android:layout_height="wrap_content"
+		    		    android:layout_centerHorizontal="true"
+		    		    android:layout_centerVertical="true"
+		    		    android:src="@drawable/power_by_attblack" />
+		
+		    	</RelativeLayout>
             </LinearLayout>
         </RelativeLayout>
     </com.hylh.scooterstg.view.CustomerScrollView>
@@ -464,7 +485,7 @@
 	    android:layout_width="fill_parent"
 	    android:layout_height="fill_parent"
 	    android:clickable="true"
-	    android:visibility="visible" >
+	    android:visibility="gone" >
 
         <RelativeLayout
             android:layout_width="match_parent"

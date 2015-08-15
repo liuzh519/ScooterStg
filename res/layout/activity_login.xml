@@ -250,4 +250,21 @@
 		</RelativeLayout>
  <!-- added by ycf on 20150725 end -->
 
+    	<RelativeLayout
+    	    android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:layout_alignParentBottom="true"
+    	    android:layout_centerHorizontal="true"
+    	    android:layout_marginBottom="20dp" >
+
+    		<ImageView
+    		    android:id="@+id/imageView3"
+    		    android:layout_width="wrap_content"
+    		    android:layout_height="wrap_content"
+    		    android:layout_centerHorizontal="true"
+    		    android:layout_centerVertical="true"
+    		    android:src="@drawable/power_by_attblack" />
+
+    	</RelativeLayout>
+
 </RelativeLayout>

@@ -118,12 +118,12 @@ public class BindActivity extends FragmentActivity {
 				}
 	        	//modify by ycf on 20150811 begin
 	        	/*
-	        	  A.用戶選好車號後，按下"rent"按鈕 (如附檔 select scooter page)
-	        	    B.出現"用戶同意條款" 下方顯示"agree"，右上方顯示 "cancel" (如附檔 member agreement page)
+	        	  A.鐢ㄦ埗閬稿ソ杌婅櫉寰岋紝鎸変笅"rent"鎸夐垥 (濡傞檮妾�select scooter page)
+	        	    B.鍑虹従"鐢ㄦ埗鍚屾剰姊濇" 涓嬫柟椤ず"agree"锛屽彸涓婃柟椤ず "cancel" (濡傞檮妾�member agreement page)
 	        	    C.
-	        	        i.用戶選擇agree後，畫面回到認知頁面，同時下方第七點選項自動打勾 (如圖acknowledgement page)
-	        	        ii.用戶若選擇cancel，畫面一樣回到認知頁面，但下方第七點選項不打勾
-	        	    D.除了第六點可選或不選之外，其他選項都必須勾選後才能讓用戶按下下方確認租車按鈕。*/
+	        	        i.鐢ㄦ埗閬告搰agree寰岋紝鐣潰鍥炲埌瑾嶇煡闋侀潰锛屽悓鏅備笅鏂圭涓冮粸閬搁爡鑷嫊鎵撳嬀 (濡傚湒acknowledgement page)
+	        	        ii.鐢ㄦ埗鑻ラ伕鎿嘽ancel锛岀暙闈竴妯ｅ洖鍒拌獚鐭ラ爜闈紝浣嗕笅鏂圭涓冮粸閬搁爡涓嶆墦鍕�
+	        	    D.闄や簡绗叚榛炲彲閬告垨涓嶉伕涔嬪锛屽叾浠栭伕闋呴兘蹇呴爤鍕鹃伕寰屾墠鑳借畵鐢ㄦ埗鎸変笅涓嬫柟纰鸿獚绉熻粖鎸夐垥銆�  */
 				Intent intent=new Intent(mContext, WebkitActivity.class);
 				intent.putExtra("tid", tid);
 				intent.putExtra("num", num);

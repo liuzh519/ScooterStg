@@ -136,11 +136,12 @@ public class WebkitActivity extends Activity {
 					MyApplication.getInstance().getCmd().sendHttpsPut( Utils.urlAgreement, params, WebkitActivity.this, mQuery, Command.MODE_SILENT);
 				}else if("rent".equals(mMode)){//added by ycf on 20150811 begin
 					
-					Intent intent=new Intent(mContext, BindConfirmActivity.class);
-					intent.putExtra("tid", tid);
-					intent.putExtra("num", num);
-					intent.putExtra("action","cancle");
-					startActivity(intent);
+//					Intent intent=new Intent(mContext, BindConfirmActivity.class);
+//					intent.putExtra("tid", tid);
+//					intent.putExtra("num", num);
+//					intent.putExtra("action","cancle");
+//					startActivity(intent);
+					finish();
 					
 				}else {//added by ycf on 20150811 end
 					finish();
@@ -168,6 +169,7 @@ public class WebkitActivity extends Activity {
 				intent.putExtra("num", num);
 				intent.putExtra("action","accept");
 				startActivity(intent);
+				finish();
 			}
 		});
 		
@@ -222,19 +224,19 @@ public class WebkitActivity extends Activity {
         webview.loadUrl(url);
 	}
     /** 
-     * ����ȫ�� 
+     * 锟斤拷锟斤拷全锟斤拷 
      */  
     private void setFullScreen() {  
-        // ����ȫ����������ԣ���ȡ��ǰ����Ļ״̬��Ȼ������ȫ��  
+        // 锟斤拷锟斤拷全锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷裕锟斤拷锟饺★拷锟角帮拷锟斤拷锟侥蛔刺拷锟饺伙拷锟斤拷锟斤拷锟饺拷锟� 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,  
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
     }  
   
     /** 
-     * �˳�ȫ�� 
+     * 锟剿筹拷全锟斤拷 
      */  
     private void quitFullScreen() {
-        // ������ǰ��Ļ״̬�Ĳ����ȡ  
+        // 锟斤拷锟斤拷锟斤拷前锟斤拷幕状态锟侥诧拷锟斤拷锟饺� 
         final WindowManager.LayoutParams attrs = getWindow().getAttributes();  
         attrs.flags &= (~WindowManager.LayoutParams.FLAG_FULLSCREEN);  
         getWindow().setAttributes(attrs);  
@@ -250,7 +252,7 @@ public class WebkitActivity extends Activity {
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);  
             setFullScreen();  
         }  
-        // �˳�ȫ����ʱ��  
+        // 锟剿筹拷全锟斤拷锟斤拷时锟斤拷  
         @Override  
         public void onHideCustomView() {  
             if (customViewCallback != null) {  

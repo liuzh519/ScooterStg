@@ -39,7 +39,7 @@
 		<com.hylh.scooterstg.view.PickerView
 		    android:id="@+id/picker"
 		    android:layout_width="match_parent"
-		    android:layout_height="130dp"
+		    android:layout_height="120dp"
 		    android:layout_alignParentLeft="true"
 		    android:layout_below="@+id/title"
 		    android:layout_marginTop="3dp"
@@ -57,5 +57,21 @@
 		    android:text="Rent"
 		    android:textSize="18dp"
 		    android:textStyle="bold" />
+
+    	<RelativeLayout
+    	    android:layout_width="match_parent"
+    	    android:layout_height="wrap_content"
+		    android:layout_below="@+id/rent"
+		    android:layout_marginTop="10dp">
+
+    		<ImageView
+    		    android:id="@+id/imageView3"
+    		    android:layout_width="wrap_content"
+    		    android:layout_height="wrap_content"
+    		    android:layout_centerHorizontal="true"
+    		    android:layout_centerVertical="true"
+    		    android:src="@drawable/power_by_attblack" />
+
+    	</RelativeLayout>
 
 </RelativeLayout>
