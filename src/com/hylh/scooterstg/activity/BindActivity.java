@@ -134,6 +134,12 @@ public class BindActivity extends FragmentActivity {
 	        	
 	        	//modify by ycf on 20150818 begin
 	        	//8.用戶同意條款只在用戶每次登入第一次租車時出現，除非重新登入或是換用戶登入，下次租車時部會再出現用戶條款。
+	        	if( SpUtil.getInstance().getInt( SpUtil.LOGIN_KEEP, 0 ) <= 0 ){//未登录状态
+	        		Intent intent = new Intent (mContext,LoginActivity.class);
+					startActivity(intent);
+					return;
+	        	}
+	        	
 	        	Intent intent = null;
 	        	if(SpUtil.getInstance().getRentCnt() == 0){
 	        		intent=new Intent(mContext, WebkitActivity.class);
@@ -174,11 +180,11 @@ public class BindActivity extends FragmentActivity {
 		if( map.get("in_service").compareTo("false") == 0 ){
 			rentInfo.setText( "Not in service" );
 			rent.setEnabled(false);
-			picker.setBackgroundResource(R.drawable.scooter_number_service_off);
+//			picker.setBackgroundResource(R.drawable.scooter_number_service_off);
 		} else if( map.get("online").compareTo("false") == 0 ){
 			rentInfo.setText( "Device offline" );
 			rent.setEnabled(false);
-			picker.setBackgroundResource(R.drawable.scooter_number_offline);
+//			picker.setBackgroundResource(R.drawable.scooter_number_offline);
 		} else if( map.get("rented").compareTo("true") == 0 ){
 			rentInfo.setText( "Has been rent" );
 			rent.setEnabled(false);
@@ -227,7 +233,7 @@ public class BindActivity extends FragmentActivity {
 		else{
 			rentTitle.setText("No scooters available at this station");
 			rentInfo.setText( "Not in service" );
-			picker.setBackgroundResource(R.drawable.scooter_number_service_off);
+//			picker.setBackgroundResource(R.drawable.scooter_number_service_off);
 			rent.setEnabled(false);
 		}
 		

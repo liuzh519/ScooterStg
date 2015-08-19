@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.hylh.scooterstg"
-    android:versionCode="129"
-    android:versionName="1.29" >
+    android:versionCode="131"
+    android:versionName="1.31" >
 
     <uses-sdk
         android:minSdkVersion="9"
@@ -103,7 +103,7 @@
             android:value="AIzaSyB7VO30-HeR_P7mRRcCm3iOGzpdkL4nUR8" / -->
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyDrNA8MwTzI7kn2bQ1W5j_3Vg1jUyBxIJU" />
+            android:value="AIzaSyBgW1VMivxZf3v255LDtnA5CrDDNhyuCSk" />
         <meta-data
             android:name="com.google.android.gms.version"
            android:value="@integer/google_play_services_version" />
