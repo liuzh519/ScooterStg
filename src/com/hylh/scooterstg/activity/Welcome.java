@@ -19,6 +19,7 @@ import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 
 public class Welcome extends Activity {
@@ -52,6 +53,8 @@ public class Welcome extends Activity {
 		int lg = sp.getInt( SpUtil.LOGIN_KEEP, 0 );
 		if( lg > 0 )
 		{
+			RelativeLayout rl = (RelativeLayout)findViewById(R.id.bgall);
+			rl.setVisibility(View.VISIBLE);
 			hTimer.postDelayed(mRunable,1000);
 		}
 		else

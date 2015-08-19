@@ -5,11 +5,13 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >  
     
-    <RelativeLayout android:id="@+id/bgall"
+    <RelativeLayout
+        android:id="@+id/bgall"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        > 
+        android:visibility="gone" >
+ 
 	     <ImageView
 	         android:id="@+id/img"
 	         android:layout_width="wrap_content"

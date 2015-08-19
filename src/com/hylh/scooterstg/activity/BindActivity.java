@@ -44,6 +44,7 @@ public class BindActivity extends FragmentActivity {
     protected PickerView picker;
     protected Button rent;
     protected TextView rentInfo;
+    protected TextView rentTitle;
 
 	protected SpUtil mSp;
 	protected String tid;
@@ -87,6 +88,7 @@ public class BindActivity extends FragmentActivity {
 		mTitleBarView=(TitleBarView) findViewById(R.id.title_bar);
 		picker = (PickerView) findViewById(R.id.picker);
 		rent = (Button) findViewById(R.id.rent);
+		rentTitle = (TextView) findViewById(R.id.title);
 		rentInfo = (TextView) findViewById(R.id.rent_info);
 	}
 
@@ -199,7 +201,7 @@ public class BindActivity extends FragmentActivity {
 			}
 		});
 		
-		if( devs != null ){
+		if( devs != null && devs.length() > 0 ){
         	try {
 				List< Map<String,String> > data = new ArrayList<Map<String,String>>();
 				Map<String,String> map;
@@ -223,6 +225,9 @@ public class BindActivity extends FragmentActivity {
 			}
 		}
 		else{
+			rentTitle.setText("No scooters available at this station");
+			rentInfo.setText( "Not in service" );
+			picker.setBackgroundResource(R.drawable.scooter_number_service_off);
 			rent.setEnabled(false);
 		}
 		

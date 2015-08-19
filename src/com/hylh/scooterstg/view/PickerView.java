@@ -11,10 +11,14 @@ import java.util.TimerTask;
 
 
 
+
+
 import org.json.JSONArray;
 
+import android.R.color;
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Paint.Align;
 import android.graphics.Paint.FontMetricsInt;
@@ -119,8 +123,9 @@ public class PickerView extends View
  
     private void performSelect()
     {
-        if (mSelectListener != null)
+        if (mSelectListener != null && mDataList != null && mDataList.size() > mCurrentSelected && mCurrentSelected >= 0 ){
             mSelectListener.onSelect(mDataList.get(mCurrentSelected).get("number"));
+        }
     }
  
     public void setData(List< Map<String,String> > datas)
@@ -213,6 +218,7 @@ public class PickerView extends View
         
         mPaint.setTextSize(size);
         mPaint.setAlpha((int) ((mMaxTextAlpha - mMinTextAlpha) * scale + mMinTextAlpha));
+        mPaint.setColor(Color.WHITE);
         // text居中绘制，注意baseline的计算才能达到居中，y值是text中心坐标
         float x = (float) (mViewWidth / 2.0);
         float y = (float) (mViewHeight / 2.0 + mMoveLen);
