@@ -57,6 +57,18 @@ public class SpUtil {
 	public static final String SYS_VER_CLIENT = "sys.ver.client";
 
 	public static final String DEV_LIST = "dev.vlst";
+	
+	//added by ycf on 20150818 begin
+	//租车次数统计
+	private  int rentCnt = 0;//
+	public int getRentCnt() {
+		return rentCnt;
+	}
+
+	public void addRentCnt() {
+		this.rentCnt++;
+	}
+	//added by ycf on 20150818 end
 
 	public int mCheck = 0;
 	public long mTime = 0;

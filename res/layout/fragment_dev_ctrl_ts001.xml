@@ -182,6 +182,7 @@
 	    	<RelativeLayout
 	    	    android:layout_width="match_parent"
 	    	    android:layout_height="wrap_content"
+	    	     android:layout_marginTop="20dp"    
 	    	    android:layout_centerHorizontal="true"
 	    	    android:layout_centerVertical="true" >
 	
@@ -412,7 +413,7 @@
 	         android:clickable="true"
             android:visibility="visible" />
 		<RelativeLayout
-	        android:id="@+id/ud_rtn_fail_rlayout"
+	        android:id="@+id/ud_rtn_fail_rlayout2"
 	        android:layout_width="fill_parent"
 	        android:layout_height="wrap_content"
 	        android:layout_centerHorizontal="true"
@@ -435,6 +436,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
                 android:gravity="center"
+		            android:enabled="false"
                 android:text="Your scooter is not in a valid parking spot"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -446,6 +448,7 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="0.1dp"
                 android:gravity="center"
+		            android:enabled="false"
                 android:text="Refer to the Map view to find the closest scooter Parking Station and park your scooter within the indicated boundary."
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textSize="30px" />
@@ -511,6 +514,7 @@
 		            android:layout_marginLeft="20dp"
 		            android:layout_marginRight="20dp"
 		            android:gravity="center"
+		            android:enabled="false"
 		            android:textAppearance="?android:attr/textAppearanceMedium"
 		            android:textSize="30px" />
 
@@ -521,6 +525,7 @@
 		            android:layout_marginLeft="20dp"
 		            android:layout_marginRight="20dp"
 		            android:layout_marginTop="0.1dp"
+		            android:enabled="false"
 		            android:gravity="center"
 		            android:textAppearance="?android:attr/textAppearanceMedium"
 		            android:textSize="30px" />

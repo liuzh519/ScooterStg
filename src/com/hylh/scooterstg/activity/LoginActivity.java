@@ -18,6 +18,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -123,7 +124,7 @@ public class LoginActivity extends Activity {
 //				startActivity(it);
 
 				Intent it = new Intent(mContext, WebkitActivity.class);  
-				//6. Forgot password連結path改成 “forgot_password.html”
+				//6. Forgot password orgot_password.html
 				it.putExtra("url", Utils.urlForgetPwd );//modify by ycf on 20150626
 				it.putExtra("mode", "");
 				startActivity(it);
@@ -162,10 +163,8 @@ public class LoginActivity extends Activity {
 	private OnClickListener loginOnClickListener=new OnClickListener() {
 		@Override
 		public void onClick(View v) {
-			
 			p = pwd.getText().toString();
 			u = una.getText().toString();
-			
 //			u = "suzhou168168@163.com";
 //			p = "password";
 			mAlarm.setVisibility(View.GONE);
@@ -224,6 +223,11 @@ public class LoginActivity extends Activity {
 										, LoginActivity.this
 										, hlogin
 										, Command.MODE_UNKNOWN );
+
+			pwd.clearFocus();
+			una.clearFocus();
+			InputMethodManager im = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE); 
+			im.hideSoftInputFromWindow(getCurrentFocus().getApplicationWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
 		}
 	};
 	
@@ -241,6 +245,7 @@ public class LoginActivity extends Activity {
 						sp.setTime(0);
 						mApp.setLogin( 1 );
 						sp.setLegal(true);
+						sp.setLoginName(una.getText().toString());
 						StatusUtils.setCheckBind(true);
 
 //						Intent intent=new Intent(mContext, MainActivity.class);
@@ -249,7 +254,9 @@ public class LoginActivity extends Activity {
 						
 						ToastUtil.makeText(LoginActivity.this, R.string.toast_login_success, Toast.LENGTH_SHORT);//added by ycf on 20150725
 						
-						
+//						Intent intent=new Intent(mContext, BindActivity.class);
+//						mContext.startActivity(intent);
+		
 						finish();
 						
 					} catch (JSONException e) {

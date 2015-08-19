@@ -23,6 +23,7 @@ import android.widget.ImageView;
 public class OrientationActivity extends Activity {
 	
 	private ViewPager mViewPager;	
+	private ImageView mPage;
 	private ImageView mPage0;
 	private ImageView mPage1;
 	private ImageView mPage2;
@@ -36,7 +37,8 @@ public class OrientationActivity extends Activity {
         mViewPager = (ViewPager)findViewById(R.id.whatsnew_viewpager);        
         mViewPager.setOnPageChangeListener(new MyOnPageChangeListener());
        
-        
+
+        mPage = (ImageView)findViewById(R.id.page);
         mPage0 = (ImageView)findViewById(R.id.page0);
         mPage1 = (ImageView)findViewById(R.id.page1);
         mPage2 = (ImageView)findViewById(R.id.page2);
@@ -44,6 +46,7 @@ public class OrientationActivity extends Activity {
         
       //将要分页显示的View装入数组中
         LayoutInflater mLi = LayoutInflater.from(this);
+        View view = mLi.inflate(R.layout.orientation0, null);
         View view1 = mLi.inflate(R.layout.orientation1, null);
         View view2 = mLi.inflate(R.layout.orientation2, null);
         View view3 = mLi.inflate(R.layout.orientation3, null);
@@ -51,6 +54,7 @@ public class OrientationActivity extends Activity {
         
       //每个页面的view数据
         final ArrayList<View> views = new ArrayList<View>();
+        views.add(view);
         views.add(view1);
         views.add(view2);
         views.add(view3);
@@ -110,22 +114,29 @@ public class OrientationActivity extends Activity {
 		public void onPageSelected(int arg0) {
 			switch (arg0) {
 			case 0:				
+				mPage.setImageDrawable(getResources().getDrawable(R.drawable.page_now));
+				mPage0.setImageDrawable(getResources().getDrawable(R.drawable.page));
+				break;
+			case 1:				
 				mPage0.setImageDrawable(getResources().getDrawable(R.drawable.page_now));
+				mPage.setImageDrawable(getResources().getDrawable(R.drawable.page));
 				mPage1.setImageDrawable(getResources().getDrawable(R.drawable.page));
 				break;
-			case 1:
+			case 2:
 				mPage1.setImageDrawable(getResources().getDrawable(R.drawable.page_now));
 				mPage0.setImageDrawable(getResources().getDrawable(R.drawable.page));
 				mPage2.setImageDrawable(getResources().getDrawable(R.drawable.page));
 				break;
-			case 2:
+			case 3:
 				mPage2.setImageDrawable(getResources().getDrawable(R.drawable.page_now));
 				mPage1.setImageDrawable(getResources().getDrawable(R.drawable.page));
 				mPage3.setImageDrawable(getResources().getDrawable(R.drawable.page));
 				break;
-			case 3:
+			case 4:
 				mPage3.setImageDrawable(getResources().getDrawable(R.drawable.page_now));
 				mPage2.setImageDrawable(getResources().getDrawable(R.drawable.page));
+				break;
+			default:
 				break;
 			}
 			currIndex = arg0;

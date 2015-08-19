@@ -3,6 +3,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -133,7 +135,7 @@ public class WebkitActivity extends Activity {
 					params.add(new BasicNameValuePair("key", SpUtil.getInstance().getSTKey())); 
 					params.add(new BasicNameValuePair("acknowledge", "user_agreement" ));  
 					
-					MyApplication.getInstance().getCmd().sendHttpsPut( Utils.urlAgreement, params, WebkitActivity.this, mQuery, Command.MODE_SILENT);
+					MyApplication.getInstance().getCmd().sendHttpsPut( Utils.urlAgreement, params, WebkitActivity.this, mQuery, Command.MODE_TOAST);
 				}else if("rent".equals(mMode)){//added by ycf on 20150811 begin
 					
 //					Intent intent=new Intent(mContext, BindConfirmActivity.class);
@@ -163,18 +165,52 @@ public class WebkitActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				Intent intent=new Intent(mContext, BindConfirmActivity.class);
 				
-				intent.putExtra("tid", tid);
-				intent.putExtra("num", num);
-				intent.putExtra("action","accept");
-				startActivity(intent);
-				finish();
+				Utils.showProcess(WebkitActivity.this);
+				
+				List<BasicNameValuePair> params = new LinkedList<BasicNameValuePair>();  
+				params.add(new BasicNameValuePair("key", SpUtil.getInstance().getSTKey())); 
+				params.add(new BasicNameValuePair("acknowledge", "user_agreement" ));  
+				
+				MyApplication.getInstance().getCmd().sendHttpsPut( Utils.urlAgreement, params, WebkitActivity.this, rentHandler, Command.MODE_TOAST);
+				
 			}
 		});
 		
 		//added by ycf on 20150725 end
 	}
+	
+	//added by ycf on 20150818 begin
+	Handler rentHandler = new Handler() {
+		@Override
+		public void handleMessage(Message msg) {
+			
+			Utils.dismissProcess();
+			
+			if( msg.arg1 == 0 ){
+				try {
+					JSONObject json = (JSONObject) msg.obj;
+					String code = json.getString("r");
+					
+					if("1100".equals(code)){
+						Intent intent=new Intent(mContext, BindConfirmActivity.class);
+						intent.putExtra("tid", tid);
+						intent.putExtra("num", num);
+						intent.putExtra("action","accept");
+						startActivity(intent);
+					}
+					
+				} catch (JSONException e) {
+					e.printStackTrace();
+				}
+			} else if( msg.arg1 == -1 ){
+				Utils.showDialog(R.string.error, (String)msg.obj, mContext, null);
+			}else if( msg.arg1 == -2 ){
+				Utils.showDialog(R.string.error, (int)msg.obj, mContext, null);
+			}
+		}
+	};
+	//added by ycf on 20150818 end
 
 	@SuppressLint("JavascriptInterface")
 	private void init(){

@@ -18,6 +18,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -99,6 +100,8 @@ public class MainActivity extends FragmentActivity {
 
 		UpdateManager manager = new UpdateManager(this);
 		manager.checkUpdate( false );
+		
+//		((InputMethodManager)getSystemService(INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(MainActivity.this.getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);  
 	}
 
 	private void findView() {
@@ -132,14 +135,14 @@ public class MainActivity extends FragmentActivity {
 		mTab3.setOnClickListener(ptr);
 		mImg3.setOnClickListener(ptr);
 
-		// ÿ��ҳ���view���
+		// 
 		mFag3 = new MoreFragment();
 		mFag2 = new CtrlTs001Fragment();
 		mFag1 = new LocationGMapFragment();
 		views.add(mFag1);
 		views.add(mFag2);
 		views.add(mFag3);
-		// ���ViewPager�����������
+		// 
 		MyAdapter mPagerAdapter = new MyAdapter( mActivity.getSupportFragmentManager());
 		mTabPager.setAdapter(mPagerAdapter);
 		
@@ -152,6 +155,7 @@ public class MainActivity extends FragmentActivity {
 			mFag1.onResume();
 		}//added by ycf on 20150813 end
 
+		setIndex(1);
 	}
 	
 	public void setIndex(int i){
@@ -180,18 +184,6 @@ public class MainActivity extends FragmentActivity {
 		}
 	};
 	
-	
-//	private void testNotification(int id){
-//		  NotificationManager manager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
-//          //构建一个通知对象(需要传递的参数有三个,分别是图标,标题和 时间)
-//          Notification notification = new Notification(R.drawable.blue_button_selector,"通知",System.currentTimeMillis());
-//          Intent intent = new Intent(MainActivity.this,MainActivity.class);
-//          PendingIntent pendingIntent = PendingIntent.getActivity(MainActivity.this,0,intent,0);                                                                          notification.setLatestEventInfo(getApplicationContext(), "通知标题", "通知显示的内容", pendingIntent);
-//          notification.flags = Notification.FLAG_AUTO_CANCEL;//点击后自动消失
-//          notification.defaults = Notification.DEFAULT_SOUND;//声音默认
-//          manager.notify(id, notification);//发动通知,id由自己指定，每一个Notification对应的唯一标志
-//          //其实这里的id没有必要设置,只是为了下面要用到它才进行了设置
-//	}
 
 	public class MyAdapter extends FragmentStatePagerAdapter {
 		LocationGMapFragment gmap;

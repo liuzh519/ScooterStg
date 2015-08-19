@@ -3,9 +3,16 @@ package com.hylh.scooterstg.view;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
  
+
+
+
+
+import org.json.JSONArray;
+
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -37,7 +44,7 @@ public class PickerView extends View
      */
     public static final float SPEED = 2;
  
-    private List<String> mDataList;
+    private List< Map<String,String> > mDataList;
     /**
      * 选中的位置，这个位置是mDataList的中心位置，一直不变
      */
@@ -64,6 +71,11 @@ public class PickerView extends View
     private onSelectListener mSelectListener;
     private Timer timer;
     private MyTimerTask mTask;
+    
+
+	public interface OnSelectEvent {
+		void onSelectItem( Map<String,String> map );
+	};
  
     Handler updateHandler = new Handler()
     {
@@ -108,14 +120,15 @@ public class PickerView extends View
     private void performSelect()
     {
         if (mSelectListener != null)
-            mSelectListener.onSelect(mDataList.get(mCurrentSelected));
+            mSelectListener.onSelect(mDataList.get(mCurrentSelected).get("number"));
     }
  
-    public void setData(List<String> datas)
+    public void setData(List< Map<String,String> > datas)
     {
         mDataList = datas;
         mCurrentSelected = datas.size() / 2;
         invalidate();
+        performSelect();
     }
  
     public void setSelected(int selected)
@@ -124,16 +137,23 @@ public class PickerView extends View
     }
     public String getSelectedValue(){
     	if( mDataList.size() > 0 ){
-    		return mDataList.get(mCurrentSelected);
+    		return mDataList.get(mCurrentSelected).get("number");
     	}else{
     		return "";
+    	}
+    }
+    public Map<String,String> getSelectedItem(){
+    	if( mDataList.size() > 0 ){
+    		return mDataList.get(mCurrentSelected);
+    	}else{
+    		return null;
     	}
     }
  
     private void moveHeadToTail()
     {
     	if( mDataList.size() > 0 ){
-	        String head = mDataList.get(0);
+    		Map<String,String> head = mDataList.get(0);
 	        mDataList.remove(0);
 	        mDataList.add(head);
     	}
@@ -142,7 +162,7 @@ public class PickerView extends View
     private void moveTailToHead()
     {
     	if( mDataList.size() > 0 ){
-	        String tail = mDataList.get(mDataList.size() - 1);
+    		Map<String,String> tail = mDataList.get(mDataList.size() - 1);
 	        mDataList.remove(mDataList.size() - 1);
 	        mDataList.add(0, tail);
     	}
@@ -164,7 +184,7 @@ public class PickerView extends View
     private void init()
     {
         timer = new Timer();
-        mDataList = new ArrayList<String>();
+        mDataList = new ArrayList<Map<String,String>>();
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mPaint.setStyle(Style.FILL);
         mPaint.setTextAlign(Align.CENTER);
@@ -184,7 +204,7 @@ public class PickerView extends View
     {
         // 先绘制选中的text再往上往下绘制其余的text
         float scale = parabola(mViewHeight / 4.0f, mMoveLen);
-        float size = (mMaxTextSize - mMinTextSize) * scale + mMinTextSize;
+        float size = ((mMaxTextSize - mMinTextSize) * scale + mMinTextSize ) * 2.5f;
         
         if( mCurrentSelected < 0 || mCurrentSelected >= mDataList.size() )
         {
@@ -199,7 +219,7 @@ public class PickerView extends View
         FontMetricsInt fmi = mPaint.getFontMetricsInt();
         float baseline = (float) (y - (fmi.bottom / 2.0 + fmi.top / 2.0));
  
-        canvas.drawText(mDataList.get(mCurrentSelected), x, baseline, mPaint);
+        canvas.drawText(mDataList.get(mCurrentSelected).get("number"), x, baseline, mPaint);
         // 绘制上方data
         for (int i = 1; (mCurrentSelected - i) >= 0; i++)
         {
@@ -231,7 +251,7 @@ public class PickerView extends View
         float y = (float) (mViewHeight / 2.0 + type * d);
         FontMetricsInt fmi = mPaint.getFontMetricsInt();
         float baseline = (float) (y - (fmi.bottom / 2.0 + fmi.top / 2.0));
-        canvas.drawText(mDataList.get(mCurrentSelected + type * position),
+        canvas.drawText(mDataList.get(mCurrentSelected + type * position).get("number"),
                 (float) (mViewWidth / 2.0), baseline, mPaint);
     }
  

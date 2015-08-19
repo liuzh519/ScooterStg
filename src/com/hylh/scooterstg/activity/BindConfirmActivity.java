@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.TimerTask;
 
 import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -107,7 +109,40 @@ public class BindConfirmActivity extends FragmentActivity {
 				
 				//启动定时通知
 //				PollingUtils.startPollingService(mContext, currentTime, 2 * 60 * 60 , PollingService.class);//added by ycf on 20150629
-				rentSuc.setVisibility(View.VISIBLE);//added by ycf on 20150724
+//				rentSuc.setVisibility(View.VISIBLE);//added by ycf on 20150724
+//				showDialog(getResources().getString(R.string.result_title_suc), "You're all set", R.drawable.icon_error);
+				
+				
+				AlertDialog aldlg = new AlertDialog.Builder(BindConfirmActivity.this)
+					.setTitle(getResources().getString(R.string.result_title_suc))
+					.setMessage("You're all set")
+					.setPositiveButton(getResources().getString(R.string.result_btn), new DialogInterface.OnClickListener(){
+						@Override
+						public void onClick(DialogInterface dialog, int which) {
+							
+							SpUtil.getInstance().addRentCnt();
+							dialog.dismiss();
+							rentSuc.setVisibility(View.GONE);
+							Intent intent = new Intent (mContext, MainActivity.class);
+							intent.putExtra("show", "mFag2");
+				  		    startActivity(intent);
+							finish();
+							
+						}})
+					.create();
+				aldlg.show();
+				
+//				Utils.showDialog(getResources().getString(R.string.result_title_suc), "You're all set", R.drawable.icon_error, mContext, new DialogInterface.OnClickListener() {
+//
+//					@Override
+//					public void onClick(DialogInterface dialog, int which) {
+//						rentSuc.setVisibility(View.GONE);
+//						Intent intent = new Intent (mContext, MainActivity.class);
+//						intent.putExtra("show", "mFag2");
+//			  		    startActivity(intent);
+//					}
+//
+//					});
 				
 			}else if( msg.arg1 == -1 ){
 				showDialog("Error", (String)msg.obj, R.drawable.icon_error);
@@ -458,10 +493,47 @@ public class BindConfirmActivity extends FragmentActivity {
 //					}
 //				}
 				//modify by ycf on 20150811 end
-				checkStatus();
+				
+				List<BasicNameValuePair> params = new LinkedList<BasicNameValuePair>();  
+				params.add(new BasicNameValuePair("key", SpUtil.getInstance().getSTKey())); 
+				params.add(new BasicNameValuePair("acknowledge", "user_agreement" ));  
+				
+				MyApplication.getInstance().getCmd().sendHttpsPut( Utils.urlAgreement, params, BindConfirmActivity.this, rentHandler, Command.MODE_SILENT);
+				
+				
 			}
         });
 	}
+	
+	
+	//added by ycf on 20150818 begin
+		Handler rentHandler = new Handler() {
+			@Override
+			public void handleMessage(Message msg) {
+				
+				Utils.dismissProcess();
+				
+				if( msg.arg1 == 0 ){
+					try {
+						JSONObject json = (JSONObject) msg.obj;
+						String code = json.getString("r");
+						
+						if("1100".equals(code)){
+							checkStatus();
+						}else{
+							check7.setChecked(false);
+						}
+					} catch (JSONException e) {
+						e.printStackTrace();
+					}
+				}else{
+					check7.setChecked(false);
+				}
+				
+				checkStatus();
+			}
+		};
+		//added by ycf on 20150818 end
 	
 	protected int checkStatus(){
 		if( !check1.isChecked() ){

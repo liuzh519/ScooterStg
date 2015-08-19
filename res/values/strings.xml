@@ -270,6 +270,7 @@ Once your previous rentals have been paid your credit card will be re-enabled.</
 	<string name="more_setting">setting</string>
 	<string name="more_update">APP update</string>
 	<string name="more_promo_code">Enter Promo Code</string>
+	<string name="more_promo_code_remark">No charges will appear on your credit card until you use up your promo credit</string>
 	<string name="more_report">report manage</string>
 	<string name="more_legal">Legal</string>
 	<string name="more_oradside">Roadside assistance</string>
