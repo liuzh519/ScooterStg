@@ -65,6 +65,10 @@ public class SpUtil {
 		return rentCnt;
 	}
 
+	public void setRentCnt(int rentCnt) {
+		this.rentCnt = rentCnt;
+	}
+
 	public void addRentCnt() {
 		this.rentCnt++;
 	}

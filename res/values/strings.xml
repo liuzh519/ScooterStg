@@ -150,6 +150,7 @@ Once your rental charges have been paid your credit card will be re-enabled.</st
 	<string name="text_payment_fail_3">Your credit card has been disabled because you have not yet paid for all of your previous scooter rentals. 
 If you are using a pre-paid card fund your card to restore service. If you are not using a pre-paid card, contact your credit card company to restore our ability to send you charges. If your card is expired contact Scootaway support to update your credit card information. 
 Once your previous rentals have been paid your credit card will be re-enabled.</string>
+	<string name="title_had_rented">You already have a scooter rented</string>
 	
 	<!-- added by ycf on 20150806 -->
 	

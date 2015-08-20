@@ -52,8 +52,8 @@ public class Utils {
 //	final public static String urlAgreement  = "https://api.scootawayscooters.com/api/1.0/user/acknowledgment";
 //	final public static String urlUser = "https://api.scootawayscooters.com/api/1.0/user";
 	
-	final public static String urlLegal = "https://www.scootawayscooters.com//legal.html";
-	final public static String urlProfile = "https://www.scootawayscooters.com/login.html";
+	final public static String urlLegal = "https:///stg.scootawayscooters.com//legal.html";
+	final public static String urlProfile = "https://stg.scootawayscooters.com/register.html";//modify by ycf on 20150820
 	final public static String urlReg = "https://stg.scootawayscooters.com/register.html";
 	final public static String urlVideo = "http://youtu.be/yQW3QcjBrJU";
 	
@@ -471,4 +471,13 @@ public class Utils {
 //        Intent intent = new Intent(context, class1);
 //        context.startActivity(intent);
 //	}
+	
+	
+	public static boolean isEmpty(String source){
+		if(source == null || "".equals(source)){
+			return true;
+		}
+		
+		return false;
+	}
 }

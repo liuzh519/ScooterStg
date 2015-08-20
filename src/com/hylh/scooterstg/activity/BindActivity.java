@@ -171,20 +171,22 @@ public class BindActivity extends FragmentActivity {
 	}
 	
 	private void updateRent(){
+		
 		Map<String,String> map;
 		map = picker.getSelectedItem();
 		if( map == null ){
+			this.checkHadRented(); //added by ycf on 20150820 
 			return;
 		}
 
 		if( map.get("in_service").compareTo("false") == 0 ){
 			rentInfo.setText( "Not in service" );
 			rent.setEnabled(false);
-//			picker.setBackgroundResource(R.drawable.scooter_number_service_off);
+			picker.setBackgroundResource(R.drawable.scooter_number_service_off);
 		} else if( map.get("online").compareTo("false") == 0 ){
 			rentInfo.setText( "Device offline" );
 			rent.setEnabled(false);
-//			picker.setBackgroundResource(R.drawable.scooter_number_offline);
+			picker.setBackgroundResource(R.drawable.scooter_number_offline);
 		} else if( map.get("rented").compareTo("true") == 0 ){
 			rentInfo.setText( "Has been rent" );
 			rent.setEnabled(false);
@@ -194,7 +196,24 @@ public class BindActivity extends FragmentActivity {
 			rentInfo.setText( "Available for rent" );
 			picker.setBackgroundResource(R.drawable.scooter_number_background_m);
 		}
+		
+		this.checkHadRented(); //added by ycf on 20150820 
 	}
+	
+	
+	//added by ycf on 20150820 begin
+	/**
+	 * 检测是否已租车
+	 */
+	private void checkHadRented(){
+	
+		if (!Utils.isEmpty(SpUtil.getInstance().getTid())) {
+			rentTitle.setText(getResources().getString(R.string.title_had_rented));
+			rent.setEnabled(false);
+			return;
+		}
+	}
+	//added by ycf on 20150820 end
 
 	private void init(){
 		JSONArray devs = StatusUtils.getDevList();

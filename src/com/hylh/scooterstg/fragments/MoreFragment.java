@@ -124,6 +124,7 @@ public class MoreFragment extends Fragment {
 				SpUtil.getInstance().setLegal(true);
 				mLogin.setVisibility(View.VISIBLE);
 				mProfile.setVisibility(View.VISIBLE);
+				sp.setRentCnt(0);//租车次数清零   //added by ycf on 20150820
 				setControl();
 			}
 		});
