@@ -174,12 +174,14 @@ public class LocationGMapFragment extends GMapFragment
 		if( mSp.getTid().isEmpty() ){
 			if( mMap != null )
 				mMap.getUiSettings().setMyLocationButtonEnabled( true );
+			car.setVisibility( View.GONE );//added by ycf on 20150820
 			
 		} else {
 			if( mMap != null )
 				mMap.getUiSettings().setMyLocationButtonEnabled( true );
 
 			car.setVisibility( View.VISIBLE );
+
 			List<BasicNameValuePair> params = new LinkedList<BasicNameValuePair>();  
 			params.add(new BasicNameValuePair("key", SpUtil.getInstance().getSTKey())); 
 			params.add(new BasicNameValuePair("query", "rental" ));  
