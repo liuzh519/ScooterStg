@@ -285,7 +285,6 @@ public class CtrlTs001Fragment extends Fragment
 				//3. 鐢ㄦ埗绉熻粖姣忓叐灏忔檪璺冲嚭鎻愮ず (Local notification)
 				Utils.cancelNoticeTimer();//added by ycf on 20150716
 				
-				
 				return;
 			}else if( msg.arg1 == -1 ){//added by ycf on 20150725 begin //閭勮粖閫ｇ窔澶辨晽椤ず
 				ToastUtil.makeText(mContext, getResources().getString(R.string.text_ctrl_scootaway_fail), Toast.LENGTH_SHORT);
@@ -324,9 +323,7 @@ public class CtrlTs001Fragment extends Fragment
 				Utils.showDialog(R.string.error, R.string.exception_unknown, R.drawable.icon_error, mContext, null);
 			}
 			
-			if(msg.obj != null && "1000".equals((String)msg.obj)){
-				ToastUtil.makeText(mContext, getResources().getString(R.string.result_title_suc), Toast.LENGTH_SHORT);
-			}
+		
 			List<BasicNameValuePair> params = new LinkedList<BasicNameValuePair>();  
 			params.add(new BasicNameValuePair("key", SpUtil.getInstance().getSTKey())); 
 			params.add(new BasicNameValuePair("query", "rental" ));  

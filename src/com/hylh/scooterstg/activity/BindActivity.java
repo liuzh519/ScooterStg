@@ -184,11 +184,11 @@ public class BindActivity extends FragmentActivity {
 			rent.setEnabled(false);
 			picker.setBackgroundResource(R.drawable.scooter_number_service_off);
 		} else if( map.get("online").compareTo("false") == 0 ){
-			rentInfo.setText( "Device offline" );
+			rentInfo.setText( "Not available for rent" );
 			rent.setEnabled(false);
 			picker.setBackgroundResource(R.drawable.scooter_number_offline);
 		} else if( map.get("rented").compareTo("true") == 0 ){
-			rentInfo.setText( "Has been rent" );
+			rentInfo.setText( "Already rented" );
 			rent.setEnabled(false);
 			picker.setBackgroundResource(R.drawable.scooter_number_rented);
 		} else {
