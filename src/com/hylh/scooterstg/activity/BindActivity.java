@@ -304,9 +304,15 @@ public class BindActivity extends FragmentActivity {
 	
     public void setUpMapIfNeeded() {
         if (mMap == null) {
-            // Try to obtain the map from the SupportMapFragment.
-            mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map))
-                    .getMap();
+        	//modify by ycf on 20150826 begin
+        	try{
+        		 // Try to obtain the map from the SupportMapFragment.
+                mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map))
+                        .getMap();
+        	}catch(Exception ex){
+        		
+        	}//modify by ycf on 20150826 end
+           
             // Check if we were successful in obtaining the map.
             if (mMap != null) {
             }

@@ -119,7 +119,7 @@ public class LoginActivity extends Activity {
 		mTextViewURL.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-//				Uri uri = Uri.parse("http://www.scootawayscooters.com/register.html");  
+//				Uri uri = Uri.parse("http://www.scootawayinc.com/register.html");  
 //				Intent it = new Intent(Intent.ACTION_VIEW, uri);  
 //				startActivity(it);
 
@@ -134,7 +134,7 @@ public class LoginActivity extends Activity {
 		register.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-//				Uri uri = Uri.parse("http://www.scootawayscooters.com/register.html");  
+//				Uri uri = Uri.parse("http://www.scootawayinc.com/register.html");  
 //				Intent it = new Intent(Intent.ACTION_VIEW, uri);  
 //				startActivity(it);
 
@@ -163,6 +163,7 @@ public class LoginActivity extends Activity {
 	private OnClickListener loginOnClickListener=new OnClickListener() {
 		@Override
 		public void onClick(View v) {
+			
 			p = pwd.getText().toString();
 			u = una.getText().toString();
 //			u = "suzhou168168@163.com";
@@ -256,6 +257,16 @@ public class LoginActivity extends Activity {
 						
 //						Intent intent=new Intent(mContext, BindActivity.class);
 //						mContext.startActivity(intent);
+						
+						//============================TEST================================
+//						Intent intent = new Intent(mContext,
+//								BindConfirmActivity.class);
+//						intent.putExtra("action", "accept");
+//
+//						intent.putExtra("tid", "8888888833");
+//						intent.putExtra("num", 33);
+//						startActivity(intent);
+						//============================ TEST ====================
 		
 						finish();
 						

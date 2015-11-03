@@ -131,7 +131,7 @@ public class MoreFragment extends Fragment {
 		mRegister.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-//				Uri uri = Uri.parse("http://www.scootawayscooters.com/register.html");  
+//				Uri uri = Uri.parse("http://www.scootawayinc.com/register.html");  
 //				Intent it = new Intent(Intent.ACTION_VIEW, uri);  
 //				startActivity(it);
 
@@ -184,7 +184,7 @@ public class MoreFragment extends Fragment {
 		mWriteUs.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {Intent data=new Intent(Intent.ACTION_SENDTO);
-			data.setData(Uri.parse("mailto:support@scootawayscooters.com"));
+			data.setData(Uri.parse("mailto:contact@scootawayinc.com"));
 			data.putExtra(Intent.EXTRA_SUBJECT, "Title");
 			data.putExtra(Intent.EXTRA_TEXT, "Context");
 			startActivity(data); 
@@ -193,7 +193,7 @@ public class MoreFragment extends Fragment {
 		mLeage.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-//				Uri uri = Uri.parse("http://www.scootawayscooters.com/legal.html");  
+//				Uri uri = Uri.parse("http://www.scootawayinc.com/legal.html");  
 //				Intent it = new Intent(Intent.ACTION_VIEW, uri);  
 //				startActivity(it);
 				Intent it = new Intent(mContext, WebkitActivity.class);  

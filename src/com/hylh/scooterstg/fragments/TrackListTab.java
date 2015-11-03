@@ -12,7 +12,6 @@ import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.json.JSONTokener;
 
 import android.content.Context;
 import android.content.Intent;
@@ -136,7 +135,7 @@ public class TrackListTab implements OnStatusEvent {
 				
 				//added by ycf on 20150706 begin
 				//取得停车场坐标
-				String sLoc = park.getString("location");
+		/*		String sLoc = park.getString("location");
 				JSONTokener jsonParser = new JSONTokener(sLoc);
 				JSONObject location = (JSONObject)jsonParser.nextValue();
 					
@@ -145,7 +144,7 @@ public class TrackListTab implements OnStatusEvent {
 			    double lat = coordinates.getDouble(0);
 				double lng = coordinates.getDouble(1);
 				map.put("lat",lat);
-				map.put("lng",lng);
+				map.put("lng",lng);*/
 				//added by ycf on 20150706 end
 				
 				list.add( map );
@@ -167,20 +166,27 @@ public class TrackListTab implements OnStatusEvent {
 					Map<String,Object> lhsMap = (Map)lhs;
 					Map<String,Object> rhsMap = (Map)rhs;
 					
-					double lat1 = (double)lhsMap.get("lat");
-					double lng1 = (double)lhsMap.get("lng");
-					double lat2 = (double)rhsMap.get("lat");
-					double lng2 = (double)rhsMap.get("lng");
+//					double lat1 = (double)lhsMap.get("lat");
+//					double lng1 = (double)lhsMap.get("lng");
+//					double lat2 = (double)rhsMap.get("lat");
+//					double lng2 = (double)rhsMap.get("lng");
+//					
+//					double dis = Utils.getDistance(lat1, lng1, lat2, lng1);
+//					
+//					if(0 < dis){
+//						return 1;
+//					}else if(dis < 0){
+//						return -1;
+//					}
 					
-					double dis = Utils.getDistance(lat1, lng1, lat2, lng1);
+					//modify by ycf on 20150827 begin
+					//停車場表單照簡稱(short name) 來排序(A-Z)
+					String lShortName = (String)lhsMap.get("short");
+					String rShortname = (String)rhsMap.get("short");
 					
-					if(0 < dis){
-						return 1;
-					}else if(dis < 0){
-						return -1;
-					}
+					return lShortName.compareTo(rShortname);
+					//modify by ycf on 20150827 end
 						
-					return 0;
 				}
 				
 			});

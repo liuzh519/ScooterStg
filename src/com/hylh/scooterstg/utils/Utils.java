@@ -36,28 +36,28 @@ public class Utils {
 //	public static String httpsuri = "https://www.anbaostar.com/mobi/do.html";
 	public static String httpsuri = "https://www.anbaostar.com/7070/do.aspx";
 	
-	final public static String urlLogin = "https://stg-api.scootawayscooters.com/api/1.0/user/login";
-	final public static String urlParking = "https://stg-api.scootawayscooters.com/api/1.0/scooter/parking";
-	final public static String urlParkStation = "https://stg-api.scootawayscooters.com/api/1.0/scooter/parking/info";
-	final public static String urlScooter = "https://stg-api.scootawayscooters.com/api/1.0/scooter";
-	final public static String urlCoupon = "https://stg-api.scootawayscooters.com/api/1.0/coupon";
-	final public static String urlAgreement  = "https://stg-api.scootawayscooters.com/api/1.0/user/acknowledgment";
-	final public static String urlUser = "https://stg-api.scootawayscooters.com/api/1.0/user";
+	final public static String urlLogin = "https://stg-api.scootawayinc.com/api/1.0/user/login";
+	final public static String urlParking = "https://stg-api.scootawayinc.com/api/1.0/scooter/parking";
+	final public static String urlParkStation = "https://stg-api.scootawayinc.com/api/1.0/scooter/parking/info";
+	final public static String urlScooter = "https://stg-api.scootawayinc.com/api/1.0/scooter";
+	final public static String urlCoupon = "https://stg-api.scootawayinc.com/api/1.0/coupon";
+	final public static String urlAgreement  = "https://stg-api.scootawayinc.com/api/1.0/user/acknowledgment";
+	final public static String urlUser = "https://stg-api.scootawayinc.com/api/1.0/user";
 
-//	final public static String urlLogin = "https://api.scootawayscooters.com/api/1.0/user/login";
-//	final public static String urlParking = "https://api.scootawayscooters.com/api/1.0/scooter/parking";
-//	final public static String urlParkStation = "https://api.scootawayscooters.com/api/1.0/scooter/parking/info";
-//	final public static String urlScooter = "https://api.scootawayscooters.com/api/1.0/scooter";
-//	final public static String urlCoupon = "https://api.scootawayscooters.com/api/1.0/coupon";
-//	final public static String urlAgreement  = "https://api.scootawayscooters.com/api/1.0/user/acknowledgment";
-//	final public static String urlUser = "https://api.scootawayscooters.com/api/1.0/user";
+//	final public static String urlLogin = "https://api.scootawayinc.com/api/1.0/user/login";
+//	final public static String urlParking = "https://api.scootawayinc.com/api/1.0/scooter/parking";
+//	final public static String urlParkStation = "https://api.scootawayinc.com/api/1.0/scooter/parking/info";
+//	final public static String urlScooter = "https://api.scootawayinc.com/api/1.0/scooter";
+//	final public static String urlCoupon = "https://api.scootawayinc.com/api/1.0/coupon";
+//	final public static String urlAgreement  = "https://api.scootawayinc.com/api/1.0/user/acknowledgment";
+//	final public static String urlUser = "https://api.scootawayinc.com/api/1.0/user";
 	
-	final public static String urlLegal = "https:///stg.scootawayscooters.com//legal.html";
-	final public static String urlProfile = "https://stg.scootawayscooters.com/register.html";//modify by ycf on 20150820
-	final public static String urlReg = "https://stg.scootawayscooters.com/register.html";
+	final public static String urlLegal = "https:///stg.scootawayinc.com//legal.html";
+	final public static String urlProfile = "https://stg.scootawayinc.com/register.html";//modify by ycf on 20150820
+	final public static String urlReg = "https://stg.scootawayinc.com/register.html";
 	final public static String urlVideo = "http://youtu.be/yQW3QcjBrJU";
 	
-	public final static String urlForgetPwd = "https://stg.scootawayscooters.com/forgot_password.html";//add by ycf on 20150626
+	public final static String urlForgetPwd = "https://stg.scootawayinc.com/forgot_password.html";//add by ycf on 20150626
 	public final static int NOTIFY_INTERVAL_TIME = 1000 * 2 * 60 * 60;//added by ycf on 20150629
 	public static final double EARTH_RADIUS = 6378.137;//added by ycf on 20150706
 
